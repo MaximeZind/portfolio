@@ -24,7 +24,7 @@
 }
 
 .background_right {
-    background-color: rgb(195, 206, 149);
+    background-color: rgb(92, 182, 185);
     width: calc(100% - 10px);
     transition: width .3s;
     display: flex;

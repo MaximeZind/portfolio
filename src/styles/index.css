@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto+Condensed&family=Roboto:wght@400;500&display=swap');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -9,15 +11,15 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --light-primary: #FFFFFF;
+  --light-primary: #53b5c4;
   --light-secondary: #000000;
-  --light-ternary: #FFFFFF;
+  --light-ternary: #000000;
   --light-quarternary: #FFFFFF;
   --light-quinary: #287c65;
   --light-senary: #654d28;
 
   --dark-primary: #285d65;
-  --dark-secondary: #3a7f8a;
+  --dark-secondary: #4eb4c4;
   --dark-ternary: #cae0fa;;
   --dark-quarternary: #1e454b;
   --dark-quinary: #287c65;
@@ -36,8 +38,18 @@ body[data-theme="dark"] {
   --ternary-color: var(--dark-ternary);
 }
 
+body {
+  background-color: var(--primary-color);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Quicksand";
+}
+
+a, a:hover, a:active, a:visited {
+  color: var(--ternary-color);
+  text-decoration: none;
 }

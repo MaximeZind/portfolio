@@ -6,7 +6,7 @@
     background: none;
     height: 100px;
     background-color: var(--primary-color);
-    transition: all .3s ease-in-out;
+    transition: height .3s ease-in-out;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -33,3 +33,32 @@
     padding: 10px;
 }
 
+.link {
+    transition: all .3s ease;
+}
+
+.activating {
+    display: inline;
+    transition: all .3s ease;
+    animation-name: fade_in;
+    animation-duration: .3s;
+    animation-timing-function: ease;
+}
+
+.hiding {
+    opacity: 0;
+}
+
+.hidden {
+    opacity: 0;
+    display: none;
+}
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

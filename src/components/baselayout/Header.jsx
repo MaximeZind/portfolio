@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import classes from '../../styles/Header.module.css';
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -21,7 +22,11 @@ function Header() {
 
     return (
         <header className={scrollY < 50 ?`${classes.header}`:`${classes.header} ${classes.scrolled}`}>
-            
+            <div></div>
+            <nav className={classes.nav}>
+                <Link to="#projects">Projects</Link>
+                <Link to="#contactme">Contact Me</Link>
+            </nav>
         </header>
     )
 }

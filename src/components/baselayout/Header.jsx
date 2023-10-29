@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import classes from '../../styles/Header.module.css';
 import { Link } from 'react-router-dom';
+import ThemeToggle from '../ThemeToggle';
 
 function Header() {
 
@@ -26,6 +27,7 @@ function Header() {
             <nav className={classes.nav}>
                 <Link to="#projects">Projects</Link>
                 <Link to="#contactme">Contact Me</Link>
+                <ThemeToggle/>
             </nav>
         </header>
     )

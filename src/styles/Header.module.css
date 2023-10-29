@@ -1,0 +1,14 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    background: none;
+    height: 100px;
+    background-color: blueviolet;
+    transition: all .3s ease-in-out;
+}
+
+.header.scrolled {
+    background: none;
+    height: 50px;
+}

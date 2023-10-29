@@ -2,9 +2,11 @@ import classes from '../styles/Home.module.css'
 
 function Home() {
 
-  return (
-    <p>Hello world!</p>
-  )
+    return (
+        <main className={classes.main}>
+            <p>Hello world!</p>
+        </main>
+    )
 }
 
 export default Home;

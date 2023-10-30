@@ -1,0 +1,16 @@
+[
+    {
+        "text" : {
+            "en-US" : "Projects",
+            "fr-FR" : "Projets"
+        },
+        "url" : "#projects"
+    },
+    {
+        "text" : {
+            "en-US" : "Contact me",
+            "fr-FR" : "Me contacter"
+        },
+        "url" : "#contactme"
+    }
+]

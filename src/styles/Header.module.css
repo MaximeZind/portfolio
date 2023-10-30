@@ -33,7 +33,7 @@
 }
 
 .link {
-    transition: all .3s ease;
+    transition: opacity .3s ease, transform .3s ease;
 }
 
 .link:hover {

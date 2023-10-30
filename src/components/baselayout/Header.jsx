@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
 import classes from '../../styles/Header.module.css';
 import { Link } from 'react-router-dom';
+
+import navLinks from '../../data/navLinks.json';
+
 import ThemeToggle from '../ThemeToggle';
 import LanguagePicker from '../LanguagePicker';
+import { useSelector } from 'react-redux';
 
 function Header() {
 
+    const preferredLanguage = useSelector((state) => state.languageReducer);
     // State to determine the position on the page
     const [isScrolled, setIsScrolled] = useState(false);
     const [linksClass, setLinksClass] = useState('visible');
@@ -42,10 +47,13 @@ function Header() {
 
     return (
         <header className={isScrolled ? `${classes.header} ${classes.scrolled}` : `${classes.header}`}>
-            <div></div>
+            <div className={classes.logo}></div>
             <nav className={classes.nav}>
-                <Link className={`${classes.link} ${linksClass}`} to="#projects">Projects</Link>
-                <Link className={`${classes.link} ${linksClass}`} to="#contactme">Contact Me</Link>
+                {navLinks.map((link) => {
+                    return (
+                        <Link key={link.url} className={`${classes.link} ${linksClass}`} to={link.url}>{link.text[preferredLanguage]}</Link>
+                    )
+                })}
                 <LanguagePicker/>
                 <ThemeToggle/>
             </nav>

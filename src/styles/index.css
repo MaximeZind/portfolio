@@ -3,19 +3,20 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  font-size: 16px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --light-primary: #53b5c4;
-  --light-secondary: #000000;
-  --light-ternary: #000000;
-  --light-quarternary: #FFFFFF;
-  --light-quinary: #287c65;
-  --light-senary: #654d28;
+  --light-primary: #82b0a8;
+  /* --light-secondary: #ffaa83; */
+  --light-secondary: #f2c2cd;
+  --light-ternary: #cfe6e3;
+  --light-quarternary: #333333;
+  --light-quinary: #5c8c84;
+  --light-senary: #d1a9e3;
 
   --dark-primary: #285d65;
   --dark-secondary: #4eb4c4;

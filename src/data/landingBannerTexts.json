@@ -1,0 +1,10 @@
+{
+    "greetings" : {
+        "en-US" : "Hi There",
+        "fr-FR" : "Bonjour"
+    },
+    "whoAmI" : {
+        "en-US" : "I am a Front End Developer",
+        "fr-FR" : "Je suis développeur Front End"
+    }
+}

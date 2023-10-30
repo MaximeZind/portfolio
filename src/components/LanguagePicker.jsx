@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import classes from '../styles/LanguagePicker.module.css';
 
-import fr_flag from '../assets/fr-fr_flag.png';
-import us_flag from '../assets/en-us_flag.png';
+import fr_flag from '../assets/countriesFlags/fr-fr_flag.png';
+import us_flag from '../assets/countriesFlags/en-us_flag.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateLanguage } from '../actions/language.action';
 
@@ -14,10 +14,12 @@ function LanguagePicker() {
         "fr-FR": fr_flag,
         'en-US': us_flag,
     };
+    
+    // Local States
     const [isOpen, setIsOpen] = useState(false);
     const [optionsListStatus, setOptionsListStatus] = useState('closed');
     const [isMouseIn, setIsMouseIn] = useState(false);
-
+    // Local Ref
     const timeoutRef = useRef(null);
 
     // Functions to close the language picker after .5s if the cursor is still outside of the component.
@@ -28,12 +30,14 @@ function LanguagePicker() {
         }
     };
 
+    // Function that'll close the menu (if not stopped by handleMouseEnter)
     function handleMouseLeave() {
         timeoutRef.current = setTimeout(() => {
             setIsMouseIn(false);
         }, 500);
     };
 
+    // Function that'll close the menu when called
     function handleClose() {
         setOptionsListStatus('closing');
         setTimeout(() => {
@@ -42,20 +46,24 @@ function LanguagePicker() {
         }, 250)
     };
 
+    // Function that'll open the menu
     function handleOpen() {
         setIsOpen(true);
         setOptionsListStatus('opening');
         setTimeout(() => {
             setOptionsListStatus('open');
-        }, 250)
+        }, 250);
     };
 
+    // useEffect triggered when isMouseIn is modified
+    // will call handleClose if isMouseIn is false
     useEffect(() => {
         if (isMouseIn === false) {
             handleClose();
         }
     }, [isMouseIn]);
 
+    // Function that will update the language 
     function handleOnClick(key) {
         dispatch(updateLanguage(key));
         handleClose();

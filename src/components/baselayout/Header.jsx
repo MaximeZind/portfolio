@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import classes from '../../styles/Header.module.css';
 import { Link } from 'react-router-dom';
 import ThemeToggle from '../ThemeToggle';
+import LanguagePicker from '../LanguagePicker';
 
 function Header() {
 
@@ -43,9 +44,10 @@ function Header() {
         <header className={isScrolled ? `${classes.header} ${classes.scrolled}` : `${classes.header}`}>
             <div></div>
             <nav className={classes.nav}>
-                    <Link className={`${classes.link} ${linksClass}`} to="#projects">Projects</Link>
-                    <Link className={`${classes.link} ${linksClass}`} to="#contactme">Contact Me</Link>
-                <ThemeToggle />
+                <Link className={`${classes.link} ${linksClass}`} to="#projects">Projects</Link>
+                <Link className={`${classes.link} ${linksClass}`} to="#contactme">Contact Me</Link>
+                <LanguagePicker/>
+                <ThemeToggle/>
             </nav>
         </header>
     )

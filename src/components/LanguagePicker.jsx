@@ -1,13 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import classes from '../styles/LanguagePicker.module.css';
 
-import fr_flag from '../assets/fr_flag.png';
-import us_flag from '../assets/us_flag.png';
+import fr_flag from '../assets/fr-fr_flag.png';
+import us_flag from '../assets/en-us_flag.png';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateLanguage } from '../actions/language.action';
 
 function LanguagePicker() {
 
-    const userPreferredLanguage = navigator.language || navigator.userLanguage;
-
+    const dispatch = useDispatch();
+    const preferredLanguage = useSelector((state) => state.languageReducer);
+    const languageFlags = {
+        "fr-FR": fr_flag,
+        'en-US': us_flag,
+    };
     const [isOpen, setIsOpen] = useState(false);
     const [optionsListStatus, setOptionsListStatus] = useState('closed');
     const [isMouseIn, setIsMouseIn] = useState(false);
@@ -18,15 +24,15 @@ function LanguagePicker() {
     function handleMouseEnter() {
         setIsMouseIn(true);
         if (timeoutRef.current) {
-          clearTimeout(timeoutRef.current);
+            clearTimeout(timeoutRef.current);
         }
-    }
+    };
 
     function handleMouseLeave() {
         timeoutRef.current = setTimeout(() => {
             setIsMouseIn(false);
-          }, 500);
-    }
+        }, 500);
+    };
 
     function handleClose() {
         setOptionsListStatus('closing');
@@ -34,7 +40,7 @@ function LanguagePicker() {
             setOptionsListStatus('closed');
             setIsOpen(false);
         }, 250)
-    }
+    };
 
     function handleOpen() {
         setIsOpen(true);
@@ -42,18 +48,23 @@ function LanguagePicker() {
         setTimeout(() => {
             setOptionsListStatus('open');
         }, 250)
-    }
+    };
 
     useEffect(() => {
         if (isMouseIn === false) {
             handleClose();
         }
-    },[isMouseIn])
+    }, [isMouseIn]);
+
+    function handleOnClick(key) {
+        dispatch(updateLanguage(key));
+        handleClose();
+    };
 
     return (
         <div className={classes.language_picker_container} onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter}>
             <div className={classes.language_picker_header} onClick={isOpen ? handleClose : handleOpen}>
-                <img src={fr_flag} className={classes.flag} />
+                <img src={languageFlags[preferredLanguage]} className={classes.flag} />
                 <svg xmlns="http://www.w3.org/2000/svg"
                     width="12px"
                     height="7px"
@@ -81,12 +92,14 @@ function LanguagePicker() {
             </div>
             {isOpen &&
                 <div className={`${classes.language_picker_options_list} ${classes[optionsListStatus]}`}>
-                    <span className={classes.language_picker_options_list_option}>
-                        <img src={fr_flag} className={classes.flag} />
-                    </span>
-                    <span className={classes.language_picker_options_list_option}>
-                        <img src={us_flag} className={classes.flag} />
-                    </span>
+                    {Object.keys(languageFlags).map((key) => {
+                        return (
+                            key !== preferredLanguage ?
+                                <span key={key} className={classes.language_picker_options_list_option} onClick={() => handleOnClick(key)}>
+                                    <img  src={languageFlags[key]} className={classes.flag} />
+                                </span> : null
+                        )
+                    })}
                 </div>
             }
         </div>

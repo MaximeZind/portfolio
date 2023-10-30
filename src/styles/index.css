@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand&family=Roboto+Condensed&family=Roboto:wght@400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Roboto+Condensed&family=Roboto:wght@400;500&display=swap');
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,12 +29,18 @@ body[data-theme="light"] {
   --primary-color: var(--light-primary);
   --secondary-color: var(--light-secondary);
   --ternary-color: var(--light-ternary);
+  --quarternary-color: var(--light-quarternary);
+  --quinary-color: var(--light-quinary);
+  --senary-color: var(--light-senary);
 }
 
 body[data-theme="dark"] {
   --primary-color: var(--dark-primary);
   --secondary-color: var(--dark-secondary);
   --ternary-color: var(--dark-ternary);
+  --quarternary-color: var(--dark-quarternary);
+  --quinary-color: var(--dark-quinary);
+  --senary-color: var(--dark-senary);
 }
 
 body {

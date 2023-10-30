@@ -36,6 +36,10 @@
     transition: all .3s ease;
 }
 
+.link:hover {
+    font-weight: 500;
+}
+
 .activating {
     display: inline;
     transition: all .3s ease;

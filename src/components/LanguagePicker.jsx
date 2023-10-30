@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classes from '../styles/LanguagePicker.module.css';
 
 import fr_flag from '../assets/fr_flag.png';
@@ -6,11 +6,53 @@ import us_flag from '../assets/us_flag.png';
 
 function LanguagePicker() {
 
+    const userPreferredLanguage = navigator.language || navigator.userLanguage;
+
     const [isOpen, setIsOpen] = useState(false);
+    const [optionsListStatus, setOptionsListStatus] = useState('closed');
+    const [isMouseIn, setIsMouseIn] = useState(false);
+
+    const timeoutRef = useRef(null);
+
+    // Functions to close the language picker after .5s if the cursor is still outside of the component.
+    function handleMouseEnter() {
+        setIsMouseIn(true);
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+        }
+    }
+
+    function handleMouseLeave() {
+        timeoutRef.current = setTimeout(() => {
+            setIsMouseIn(false);
+          }, 500);
+    }
+
+    function handleClose() {
+        setOptionsListStatus('closing');
+        setTimeout(() => {
+            setOptionsListStatus('closed');
+            setIsOpen(false);
+        }, 250)
+    }
+
+    function handleOpen() {
+        setIsOpen(true);
+        setOptionsListStatus('opening');
+        setTimeout(() => {
+            setOptionsListStatus('open');
+        }, 250)
+    }
+
+    useEffect(() => {
+        if (isMouseIn === false) {
+            handleClose();
+        }
+    },[isMouseIn])
 
     return (
-        <div className={classes.language_picker_container}>
-            <div className={classes.language_picker_header} onClick={() => setIsOpen(!isOpen)}>
+        <div className={classes.language_picker_container} onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter}>
+            <div className={classes.language_picker_header} onClick={isOpen ? handleClose : handleOpen}>
                 <img src={fr_flag} className={classes.flag} />
                 <svg xmlns="http://www.w3.org/2000/svg"
                     width="12px"
@@ -18,7 +60,11 @@ function LanguagePicker() {
                     viewBox="0 0 12 7"
                     stroke='red'
                     version="1.1"
-                    className={isOpen ? `${classes.arrow_icon} ${classes.open}` : `${classes.arrow_icon}`}>
+                    className={isOpen ? `${classes.arrow_icon} ${classes.open}` : `${classes.arrow_icon}`}
+                    style={{
+                        transform: isOpen && isMouseIn && 'rotate(180deg)',
+                        transition: 'transform .3s ease'
+                    }}>
                     <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd" >
                         <g id="Rounded" transform="translate(-616.000000, -2467.000000)">
                             <g id="Hardware" transform="translate(100.000000, 2404.000000)">
@@ -34,7 +80,7 @@ function LanguagePicker() {
                 </svg>
             </div>
             {isOpen &&
-                <div className={classes.language_picker_options_list}>
+                <div className={`${classes.language_picker_options_list} ${classes[optionsListStatus]}`}>
                     <span className={classes.language_picker_options_list_option}>
                         <img src={fr_flag} className={classes.flag} />
                     </span>

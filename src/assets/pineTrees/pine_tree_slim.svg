@@ -12,7 +12,9 @@
     <polygon fill="url(#trunkGradient)" points="60,270 90,270 77,20 72,20" />
     <polygon fill="url(#pineGradient)" points="15,180 135,180 83,150 67,150" />
     <polygon fill="url(#pineGradient)" points="27,150 123,150 83,120 67,120" />
-    <polygon fill="url(#pineGradient)" points="35,125 115,125 70,70 80,70" />
-    <polygon fill="url(#pineGradient)" points="42,100 108,100 79,40 71,40" />
+    <polygon fill="url(#pineGradient)" points="35,125 115,125 70,75 80,75" />
+    <polygon fill="url(#pineGradient)" points="42,100 108,100 79,75 71,75" />
+    <polygon fill="url(#pineGradient)" points="46,60 104,60 79,45 71,45" />
+    <polygon fill="url(#pineGradient)" points="50,50 100,50 79,35 71,35" />
     <polygon fill="url(#pineGradient)" points="45,20 105,20 75,0" />
 </svg>

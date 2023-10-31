@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import classes from '../../styles/Header.module.css';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-
 import navLinks from '../../data/navLinks.json';
-
 import ThemeToggle from '../ThemeToggle';
 import LanguagePicker from '../LanguagePicker';
 import { useSelector } from 'react-redux';
 
-function Header() {
+function Header({ scrollValue }) {
 
     const preferredLanguage = useSelector((state) => state.languageReducer);
     // State to determine the position on the page
@@ -17,11 +16,8 @@ function Header() {
 
     // useEffect to call handleOnScroll and update the classes of the header
     useEffect(() => {
-        window.addEventListener('scroll', handleOnScroll);
-        return () => {
-            window.removeEventListener('scroll', handleOnScroll);
-        };
-    }, []);
+        handleOnScroll();
+    },[scrollValue]);
 
     useEffect(() => {
         if (isScrolled) {
@@ -38,9 +34,9 @@ function Header() {
     }, [isScrolled]);
 
     function handleOnScroll() {
-        if (window.scrollY > 50) {
+        if (scrollValue > 50) {
             setIsScrolled(true);
-        } else if (window.scrollY < 50) {
+        } else if (scrollValue < 50) {
             setIsScrolled(false);
         }
     }
@@ -62,3 +58,7 @@ function Header() {
 }
 
 export default Header;
+
+Header.propTypes = {
+    scrollValue: PropTypes.number.isRequired,
+}

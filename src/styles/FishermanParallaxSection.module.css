@@ -1,4 +1,30 @@
 .fisherman_parallax_section {
-    height: 600px;
-    color: #045c49;
+    position: relative;
+    transform-style: preserve-3d;
+    height: 200vh ;
+    z-index: -1;
+    /* background: linear-gradient( rgba(255, 255, 255, 0.021), blue); */
+    /* background-color: blue; */
+}
+
+.mountains_background {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    transform: translateZ(-7px) scale(1.7);
+    transform-style: preserve-3d;
+    opacity: 1;
+    background: linear-gradient( rgba(255, 255, 255, 0.021), var(--ternary-color));
+}
+
+.treeline {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    transform: translateZ(-2px) scale(1.2);
+    transform-style: preserve-3d;
 }

@@ -1,0 +1,83 @@
+[
+    {
+      "name": "GitHub",
+      "img": "/src/assets/stackIcons/github_logo.png",
+      "description": {
+        "en-US": "Version Control",
+        "fr-FR": "Gestion de version"
+      }
+    },
+    {
+      "name": "Git",
+      "img": "/src/assets/stackIcons/git_logo.png",
+      "description": {
+        "en-US": "Version Control",
+        "fr-FR": "Gestion de version"
+      }
+    },
+    {
+      "name": "Redux",
+      "img": "/src/assets/stackIcons/redux_logo.png",
+      "description": {
+        "en-US": "State Management",
+        "fr-FR": "Gestion d'état"
+      }
+    },
+    {
+      "name": "React",
+      "img": "/src/assets/stackIcons/React_logo.png",
+      "description": {
+        "en-US": "Framework",
+        "fr-FR": "Framework"
+      }
+    },
+    {
+      "name": "JavaScript",
+      "img": "/src/assets/stackIcons/js_logo.png",
+      "description": {
+        "en-US": "Programming",
+        "fr-FR": "Programmation"
+      }
+    },
+    {
+      "name": "Jest",
+      "img": "/src/assets/stackIcons/jest_logo.png",
+      "description": {
+        "en-US": "Testing",
+        "fr-FR": "Test"
+      }
+    },
+    {
+      "name": "HTML",
+      "img": "/src/assets/stackIcons/html_logo.png",
+      "description": {
+        "en-US": "Markup",
+        "fr-FR": "Balisage"
+      }
+    },
+    {
+      "name": "Figma",
+      "img": "/src/assets/stackIcons/figma_logo.svg",
+      "description": {
+        "en-US": "Design",
+        "fr-FR": "Design"
+      }
+    },
+    {
+      "name": "Cypress",
+      "img": "/src/assets/stackIcons/cypress_logo.png",
+      "description": {
+        "en-US": "Testing",
+        "fr-FR": "Test"
+      }
+    },
+    {
+      "name": "CSS",
+      "img": "/src/assets/stackIcons/css_logo.png",
+      "description": {
+        "en-US": "Styling",
+        "fr-FR": "Style"
+      }
+    }
+  ]
+  

@@ -1,0 +1,37 @@
+.skills_gallery {
+    background-color: var(--quinary-color);
+    padding: 10vh 10vw ;
+}
+
+.skills_gallery_cards {
+    position: relative;
+    height: 500px;
+}
+
+.folder {
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 75px);
+    background-color: rgb(46, 46, 46);
+    border-radius: 5px;
+    height: 150px;
+    width: 120px;
+    padding: 10px;
+    gap: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+    border-top-right-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.folder:hover {
+    cursor: pointer;
+    transform: scale(1.07) rotate(5deg);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+.folder > p {
+    color: var(--ternary-color)
+}

@@ -1,4 +1,5 @@
 import classes from '../styles/SkillsGallery.module.css';
+import PropTypes from 'prop-types';
 import skills from '../data/skillsData.json';
 import SkillsCard from './SkillCard';
 import { useState } from 'react';
@@ -75,3 +76,7 @@ function SkillsGallery({ preferredLanguage }) {
 }
 
 export default SkillsGallery;
+
+SkillsGallery.propTypes = {
+    preferredLanguage: PropTypes.string.isRequired,
+}

@@ -1,5 +1,5 @@
 import classes from '../styles/SkillsCard.module.css';
-
+import PropTypes from 'prop-types';
 
 function SkillsCard({ name, img, coordinates, animationDelay, isActive }) {
 
@@ -33,3 +33,11 @@ function SkillsCard({ name, img, coordinates, animationDelay, isActive }) {
 }
 
 export default SkillsCard;
+
+SkillsCard.propTypes = {
+    name: PropTypes.string,
+    img: PropTypes.string,
+    coordinates: PropTypes.object,
+    animationDelay: PropTypes.number,
+    isActive: PropTypes.bool,
+}

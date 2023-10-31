@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import classes from '../styles/LandingBanner.module.css';
+import PropTypes from 'prop-types';
 
 import landingBannerTexts from '../data/landingBannerTexts.json';
 
@@ -115,3 +116,7 @@ function LandingBanner({ preferredLanguage }) {
 }
 
 export default LandingBanner;
+
+LandingBanner.propTypes = {
+    preferredLanguage: PropTypes.string.isRequired,
+}

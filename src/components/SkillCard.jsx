@@ -9,7 +9,7 @@ function SkillsCard({ name, img, coordinates, animationDelay, isActive }) {
     const maxRotate = 12;
     const rotate = Math.random() * (maxRotate - minRotate) + minRotate;
     return (
-        <div className={`${classes.card_wrapper_position} ${classes.floating}`}
+        <div className={coordinates ? `${classes.card_wrapper_position} ${classes.opened}` : `${classes.card_wrapper_position}`}
             style={{
                 transform: `translate(${xCoordinates}px, ${yCoordinates}px)`,
             }}>

@@ -7,6 +7,10 @@
     transition: transform .5s ease-in-out;
 }
 
+.opened:hover {
+    z-index: 10;
+}
+
 .card_wrapper_floating {
     animation-name: floating;
     animation-duration: 3s;
@@ -14,12 +18,17 @@
     animation-timing-function: ease-in-out;
 }
 
+.card_wrapper_rotate {
+    transition: transform .3s ease-in-out;
+}
+
 .skills_card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(46, 46, 46);
+    background-color: rgb(75, 75, 75);
+    border: 5px solid white;
     border-radius: 10px;
     height: 150px;
     width: 120px;

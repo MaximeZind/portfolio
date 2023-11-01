@@ -5,6 +5,7 @@ import SkillsGallery from '../components/skillsGallery';
 import FishermanParallaxSection from '../components/FishermanParallaxSection';
 import { useEffect, useRef } from 'react';
 import { useOutletContext } from "react-router-dom";
+import ProjectsGallery from '../components/ProjectsGallery';
 
 function Home({ }) {
 
@@ -26,7 +27,7 @@ function Home({ }) {
             <LandingBanner preferredLanguage={preferredLanguage} scrollValue={scrollValue} />
             <SkillsGallery preferredLanguage={preferredLanguage}/>
             <FishermanParallaxSection />
-            <p>Hello world!</p>
+            <ProjectsGallery preferredLanguage={preferredLanguage}/>
         </main>
     )
 }

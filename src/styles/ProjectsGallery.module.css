@@ -1,0 +1,13 @@
+.projects_gallery {
+    min-height: 100vh;
+    background-color: var(--ternary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.hook{
+    height: 100px;
+    width: 100px
+    /* align-self: flex-start; */
+}

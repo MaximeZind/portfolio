@@ -1,6 +1,7 @@
 .main {
     padding-top: 100px;
     height: 100vh;
+    /* max-width: 1440px; */
     overflow-y: auto;
     overflow-x: hidden;
     perspective: 10px;

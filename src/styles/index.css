@@ -49,6 +49,7 @@ body {
   overflow-x: hidden;
   background-color: var(--primary-color);
   transition: background-color .3s ease;
+  margin: auto;
 }
 
 * {

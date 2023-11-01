@@ -15,7 +15,6 @@ function ThemeToggle() {
             } else if (!prefersDarkMode) {
                 body.dataset.theme = 'light';
                 setIsClicked(true);
-                console.log((isClicked));
             }
         }
     });

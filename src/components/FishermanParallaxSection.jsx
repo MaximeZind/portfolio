@@ -16,7 +16,6 @@ import { useEffect, useState } from 'react';
 function FishermanParallaxSection({ }) {
 
     const [windowSize, setWindowSize] = useState(window.innerWidth);
-    console.log(windowSize);
 
     useEffect(() => {
         window.addEventListener('resize',() => setWindowSize(window.innerWidth));

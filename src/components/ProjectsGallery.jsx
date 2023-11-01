@@ -7,7 +7,7 @@ function ProjectsGallery({ preferredLanguage }) {
     return (
         <section className={classes.projects_gallery}>
             <img className={classes.hook} src={hook} alt="hook"/>
-            <h1>Projects Gallery</h1>
+            <h2>Projects Gallery</h2>
         </section>
     )
 }

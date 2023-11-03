@@ -1,7 +1,9 @@
 .project_preview {
+    height: 100%;
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
     grid-template-areas: 'a';
     overflow: hidden;
 }
@@ -34,8 +36,9 @@
 }
 
 .project_preview_title > h3 {
-    font-size: 45px;
-    font-family: 'lilita';
+    font-size: 55px;
+    font-family: 'Playfair Display';
+    font-weight: 900;
     color: var(--ternary-color);
 }
 

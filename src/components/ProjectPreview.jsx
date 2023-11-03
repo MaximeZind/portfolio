@@ -56,7 +56,7 @@ function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurren
                 <div className={classes.stack}>
                 {
                         repo &&
-                        <Link to={repo}>
+                        <Link to={repo} target="_blank">
                             <span className={`${classes.stack_icon} ${classes.repo}`}>
                                 <img src={github_logo} alt="Github logo" />
                             </span>
@@ -64,7 +64,7 @@ function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurren
                     }
                     {
                         preview &&
-                        <Link to={preview}>
+                        <Link to={preview} target="_blank">
                             <span className={`${classes.stack_icon} ${classes.preview}`}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     version="1.1"
@@ -82,7 +82,7 @@ function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurren
                     }
                     {
                         mockup &&
-                        <Link to={mockup}>
+                        <Link to={mockup} target="_blank">
                             <span className={`${classes.stack_icon} ${classes.mockup}`}>
                                 <img src={figma_logo} alt="Figma logo" />
                             </span>

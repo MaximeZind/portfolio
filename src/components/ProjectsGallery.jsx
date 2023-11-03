@@ -33,7 +33,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
 
 
     return (
-        <section className={classes.projects_gallery}>
+        <section className={classes.projects_gallery} id='projects'>
             <img className={classes.hook} src={hook} alt="hook" />
             <h2>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Gallerie des projets'}</h2>
             <div  className={classes.projects_gallery_divider}>

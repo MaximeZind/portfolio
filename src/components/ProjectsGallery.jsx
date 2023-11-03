@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import hook from '../assets/hook.svg';
 import { getProjects } from '../utils/getProjectsData';
 import ProjectPreview from './ProjectPreview';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 
 function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectInfosOpen, setCurrentProjectId }) {
@@ -11,17 +11,21 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
 
     const projects = getProjects();
     const galleryRef = useRef(null);
+    const [titleScrollLeft, setTitleScrollLeft] = useState(0);
 
     //
     useEffect(() => {
         function handleScroll() {
             if (galleryRef.current) {
                 const rect = galleryRef.current.getBoundingClientRect();
+                // console.log(rect.top);
+                // console.log(window.innerHeight);
                 if (rect.top <= 0 && rect.bottom > window.innerHeight) {
                     setIsProjectInfosOpen(true);
                 } else if (rect.top > 0 || rect.bottom <= window.innerHeight) {
                     setIsProjectInfosOpen(false);
                 }
+                    setTitleScrollLeft(rect.top - window.innerHeight);
             }
         }
 
@@ -31,11 +35,13 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
         };
     }, []);
 
-
     return (
         <section className={classes.projects_gallery} id='projects'>
             <img className={classes.hook} src={hook} alt="hook" />
-            <h2>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Gallerie des projets'}</h2>
+            <h2 className={classes.projects_gallery_title}
+            style={{
+                transform: `translateX(${titleScrollLeft/5}px)`
+            }}>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Gallerie des projets'}</h2>
             <div  className={classes.projects_gallery_divider}>
                 <div className={classes.project_infos_background}></div>
                 <div ref={galleryRef} className={classes.projects_gallery_previews}>

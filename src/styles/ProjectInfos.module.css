@@ -3,38 +3,47 @@
     top: 0;
     left: 40px;
     height: 100vh;
-    width: 25%;
-    z-index: 999; 
+    width: calc(30% - 40px);
+    z-index: 999;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+    pointer-events: none;
+}
 
-  .project_infos_icon {
+.project_infos_icon {
     width: 50px;
     height: 50px;
-  }
+}
 
-  .project_infos_icon > img,   .project_infos_icon > svg {
+.project_infos_icon>img,
+.project_infos_icon>svg {
     width: 40px;
     height: 40px;
-  }
+}
 
-  .opened {
+.project_infos_description {
+    max-height: 50vh;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* animations */
+.opening {
     animation-name: fade_slide_in_right;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
-  }
+}
 
-  .closing {
+.closing {
     animation-name: fade_slide_out_left;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
-  }
+}
 
-  @keyframes fade_slide_in_right {
+@keyframes fade_slide_in_right {
     from {
         transform: translateX(-50px);
         opacity: 0;

@@ -38,7 +38,8 @@ function Home({ }) {
     };
 
     //Everything that's got to do with ProjectInfo
-    const [currentProjectId, setCurrentProjectId] = useState(null);
+
+    const [currentProjectId, setCurrentProjectId] = useState(0);
     const [currentProject, setCurrentProject] = useState(emptyProject);
     // Change the value of the project in the infos, depending on the current ID
     useEffect(() => {
@@ -65,7 +66,7 @@ function Home({ }) {
                     <p>other section</p>
                 </div>
             </main>
-            {isProjectInfosOpen &&
+            {isProjectInfosOpen ?
                 <ProjectInfos id={currentProject.id}
                     title={currentProject.title}
                     description={currentProject.description[preferredLanguage]}
@@ -73,7 +74,7 @@ function Home({ }) {
                     preview={currentProject.preview}
                     mockup={currentProject.mockup}
                     stack={currentProject.stack}
-                />}
+                /> : null}
         </>
 
     )

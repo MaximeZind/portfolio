@@ -7,7 +7,7 @@ function ContactMe({ preferredLanguage }) {
 
     return (
         <section className={classes.skills_gallery} id='contactme'>
-
+            <h2>Contact me</h2>
         </section>
     )
 }

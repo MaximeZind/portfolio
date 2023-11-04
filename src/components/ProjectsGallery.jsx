@@ -41,7 +41,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
             <h2 className={classes.projects_gallery_title}
             style={{
                 transform: `translateX(${titleScrollLeft/5}px)`
-            }}>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Gallerie des projets'}</h2>
+            }}>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Galerie des projets'}</h2>
             <div  className={classes.projects_gallery_divider}>
                 <div className={classes.project_infos_background}></div>
                 <div ref={galleryRef} className={classes.projects_gallery_previews}>

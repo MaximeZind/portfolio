@@ -48,6 +48,7 @@ function Header({ scrollValue }) {
                 {navLinks.map((link) => {
                     return (
                         <Link key={link.url} className={`${classes.link} ${linksClass}`} to={link.url}>{link.text[preferredLanguage]}</Link>
+                        
                     )
                 })}
                 <LanguagePicker/>

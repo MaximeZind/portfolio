@@ -1,6 +1,5 @@
 .skills_gallery {
-    /* background-color: var(--quinary-color); */
-    padding: 10vh 10vw ;
+    padding: 10vh 10vw;
 }
 
 .skills_gallery_cards {
@@ -32,6 +31,115 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
-.folder > p {
+.folder>p {
     color: var(--ternary-color)
+}
+
+.card {
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 75px);
+    background-color: rgb(75, 75, 75);
+    border: 5px solid white;
+    border-radius: 10px;
+    height: 150px;
+    width: 120px;
+    padding: 10px;
+    gap: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(0.9);
+}
+
+.card1 {
+    animation-name: exit_card1;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: .15s;
+}
+
+.card2 {
+    animation-name: exit_card2;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.card3 {
+    animation-name: exit_card3;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: .1s;
+}
+
+.skills_gallery_title {
+    position: absolute;
+    left: calc(50% - 60px);
+    top: calc(50% - 75px);
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card4 {
+    animation-name: exit_card4;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes exit_card1 {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    100% {
+        transform: translate(150vw, 150vh) rotate(18000deg);
+    }
+}
+
+@keyframes exit_card2 {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    100% {
+        transform: translate(-150vw, -50vh) rotate(18000deg);
+    }
+}
+
+@keyframes exit_card3 {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    100% {
+        transform: translate(150vw, -50vh) rotate(18000deg);
+    }
+}
+
+@keyframes exit_card4 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    30% {
+        transform: translate(80vw, 0) rotate(1800deg);
+    }
+
+    45% {
+        transform: translate(70vw, -50vh) scale(2) rotate(-60deg);
+        z-index: 999;
+    }
+
+    60% {
+        transform: translate(-10vw, -10vh) scale(3) rotate(-110deg);
+        z-index: 999;
+    }
+
+    80% {
+        transform: translate(-10vw, -10vh) scale(3) rotate(-110deg);
+        z-index: 999;
+    }
+
+    100% {
+        transform: translate(-10vw, 80vh) scale(3) rotate(-110deg);
+    }
 }

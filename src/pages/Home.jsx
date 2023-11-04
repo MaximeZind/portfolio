@@ -1,13 +1,14 @@
 import { useSelector } from 'react-redux';
 import LandingBanner from '../components/LandingBanner';
 import classes from '../styles/Home.module.css'
-import SkillsGallery from '../components/skillsGallery';
+import SkillsGallery from '../components/SkillsGallery';
 import FishermanParallaxSection from '../components/FishermanParallaxSection';
 import { useEffect, useRef, useState } from 'react';
 import { useOutletContext } from "react-router-dom";
 import ProjectsGallery from '../components/ProjectsGallery';
 import ProjectInfos from '../components/ProjectInfos';
 import { getProject } from '../utils/getProjectsData';
+import ContactMe from '../components/ContactMe';
 
 function Home({ }) {
 
@@ -56,14 +57,14 @@ function Home({ }) {
                 <LandingBanner preferredLanguage={preferredLanguage} scrollValue={scrollValue} />
                 <SkillsGallery preferredLanguage={preferredLanguage} />
                 <FishermanParallaxSection />
-                <ProjectsGallery preferredLanguage={preferredLanguage} 
-                scrollableContainer={mainRef} 
-                setIsProjectInfosOpen={setIsProjectInfosOpen} 
-                setCurrentProjectId={setCurrentProjectId}/>
+                <ProjectsGallery preferredLanguage={preferredLanguage}
+                    scrollableContainer={mainRef}
+                    setIsProjectInfosOpen={setIsProjectInfosOpen}
+                    setCurrentProjectId={setCurrentProjectId} />
                 <div style={{
                     height: '1000px'
                 }}>
-                    <p>other section</p>
+                    <ContactMe preferredLanguage={preferredLanguage} />
                 </div>
             </main>
             {isProjectInfosOpen ?

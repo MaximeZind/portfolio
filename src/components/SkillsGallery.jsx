@@ -54,21 +54,24 @@ function SkillsGallery({ preferredLanguage }) {
 
     return (
         <section className={classes.skills_gallery}>
-            <h2>{preferredLanguage === 'en-US' ? 'Skills' : 'Compétences'}</h2>
             <div className={classes.skills_gallery_cards}>
+            <div className={`${classes.card} ${isOpen && classes.card1}`}></div>
                 {
                     skills.map((skill, index) => {
                         return (
-                            <SkillsCard key={index} 
-                            name={skill.name} 
-                            img={skill.img} 
-                            coordinates={isOpen ? transformations[index] : null}  
-                            animationDelay={index*0.325448}/>
+                            <SkillsCard key={index}
+                                name={skill.name}
+                                img={skill.img}
+                                coordinates={isOpen ? transformations[index] : null}
+                                animationDelay={index * 0.325448} />
                         )
                     })
                 }
+                {/* <img src={`src/assets/skills_cards/card_${preferredLanguage}.svg`} className={`${classes.skills_gallery_title} ${isOpen && classes.card4}`} alt='Skills'/> */}
+                <div className={`${classes.card} ${isOpen && classes.card2}`}></div>
+                <div className={`${classes.card} ${isOpen && classes.card3}`}></div>
                 <div className={classes.folder} onClick={() => setIsOpen(!isOpen)}>
-                    <p>Random innocent looking folder</p>
+                    <p>SKILLSET - Do not open</p>
                 </div>
             </div>
         </section>

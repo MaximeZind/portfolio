@@ -1,7 +1,7 @@
 import classes from '../styles/LandingBanner.module.css';
 import PropTypes from 'prop-types';
-
 import landingBannerTexts from '../data/landingBannerTexts.json';
+import { Link } from 'react-router-dom';
 
 function LandingBanner({ preferredLanguage, scrollValue }) {
 
@@ -21,9 +21,11 @@ function LandingBanner({ preferredLanguage, scrollValue }) {
                         <button className={`${classes.resume_button} ${classes.button}`}>
                             {preferredLanguage === 'en-US' ? "My resume" : 'Mon CV'}
                         </button>
-                        <button className={`${classes.contactme_button} ${classes.button}`}>
-                            {preferredLanguage === 'en-US' ? "Contact me" : 'Me contacter'}
-                        </button>
+                        <Link to='/#contactme'>
+                            <button className={`${classes.contactme_button} ${classes.button}`}>
+                                {preferredLanguage === 'en-US' ? "Contact me" : 'Me contacter'}
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className={classes.landing_banner_clouds_left}>

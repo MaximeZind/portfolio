@@ -1,0 +1,17 @@
+.contact_me {
+    position: relative;
+    padding: 50px;
+}
+
+.contact_me_title {
+    font-family: 'Raleway';
+    font-size: 80px;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    position: absolute;
+    top: 0px;
+    right: 40px;
+    z-index: 1000;
+    transition: transform .8s ease-out;
+    opacity: .9;
+}

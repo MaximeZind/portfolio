@@ -1,0 +1,26 @@
+{
+    "firstName" : {
+        "en-US" : "First name",
+        "fr-FR" : "Prénom"
+    },
+    "lastName" : {
+        "en-US" : "Last name",
+        "fr-FR" : "Nom de famille"
+    },
+    "email" : {
+        "en-US" : "Email",
+        "fr-FR" : "Email"
+    },
+    "phoneNumber" : {
+        "en-US" : "Phone number (optionnal)",
+        "fr-FR" : "Numéro de téléphone (optionnel)"
+    },
+    "message" : {
+        "en-US" : "Message",
+        "fr-FR" : "Message"
+    },
+    "send" : {
+        "en-US" : "Send",
+        "fr-FR" : "Envoyer"
+    }
+}

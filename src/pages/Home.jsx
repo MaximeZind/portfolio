@@ -61,7 +61,8 @@ function Home({ }) {
                     scrollableContainer={mainRef}
                     setIsProjectInfosOpen={setIsProjectInfosOpen}
                     setCurrentProjectId={setCurrentProjectId} />
-                <ContactMe preferredLanguage={preferredLanguage} />
+                <ContactMe preferredLanguage={preferredLanguage}
+                    scrollableContainer={mainRef} />
             </main>
             {isProjectInfosOpen ?
                 <ProjectInfos id={currentProject.id}

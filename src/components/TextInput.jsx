@@ -7,6 +7,7 @@ function TextInput({ name, label, errorMsg, onChange, defaultValue, preferredLan
     const input = useRef(null);
     const container = useRef(null);
     const [isFocused, setIsFocused] = useState(false);
+    const [isCorrect, setIsCorrect] = useState(true);
 
     useEffect(() => {
         if (container.current && defaultValue) {
@@ -14,7 +15,7 @@ function TextInput({ name, label, errorMsg, onChange, defaultValue, preferredLan
         }
     }, [container]);
 
-    // Pour que le focus s'enlève lorsque l'utilisateur clique en dehors
+    // To remove the focus when the user clicks outside
     document.addEventListener('click', handleClickOutside);
     function handleClickOutside(event) {
         if (container.current && !container.current.contains(event.target)) {
@@ -26,14 +27,14 @@ function TextInput({ name, label, errorMsg, onChange, defaultValue, preferredLan
         }
     }
 
-    // modification de isFocused lors d'une modification de la value dans l'input
-    function handleOnChange() {
+    // isFocused is modified when the value of the input is modified
+    function handleOnChange(event) {
         if (input.current.value !== "") {
             setIsFocused(true);
         } else if (input.current.value === "") {
             setIsFocused(false);
-
         }
+        onChange && setIsCorrect(onChange(event));
     }
 
     return (
@@ -46,7 +47,10 @@ function TextInput({ name, label, errorMsg, onChange, defaultValue, preferredLan
                 type="text"
                 id={name}
                 name={name}
-                onChange={onChange ? onChange : handleOnChange} />
+                onChange={handleOnChange} 
+                style={{
+                    boxShadow: !isCorrect && '0 1px 0 0 red'
+                }}/>
             {errorMsg ? <p className={classes.error_msg}>{errorMsg[preferredLanguage]}</p> : null}
         </div>
     );

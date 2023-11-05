@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser';
 import PropTypes from 'prop-types';
 import classes from '../styles/ContactForm.module.css';
 import TextInput from './TextInput';
-import { validateForm } from '../utils/validateForm';
+import { validateEmail, validateForm, validateMessage, validateName } from '../utils/validateForm';
 
 function ContactForm({ preferredLanguage, firstName, lastName, email, phoneNumber, message, send }) {
     const form = useRef();
@@ -15,16 +15,17 @@ function ContactForm({ preferredLanguage, firstName, lastName, email, phoneNumbe
         const formJson = Object.fromEntries(formData.entries());
         const formValidation = validateForm(formJson);
         if (formValidation.isValid === true) {
-            console.log('message sent');
-            // emailjs.sendForm('service_tct0pgs', 'template_xt98eiw', form.current, '2IgdocOQ9uvLehO0V')
-            //     .then((result) => {
-            //         console.log(result.text);
-            //     }, (error) => {
-            //         console.log(error.text);
-            //     });
+            emailjs.sendForm('service_tct0pgs', 'template_xt98eiw', form.current, '2IgdocOQ9uvLehO0V')
+                .then((result) => {
+                    console.log(result.text);
+                }, (error) => {
+                    console.log(error.text);
+                });
         }
         handleErrorMsgs(formValidation.errorMsg);
     };
+
+    // Handling of the error messages
 
     const [firstNameErrorMsg, setFirstNameErrorMsg] = useState({});
     const [lastNameErrorMsg, setLastNameErrorMsg] = useState({});
@@ -47,6 +48,28 @@ function ContactForm({ preferredLanguage, firstName, lastName, email, phoneNumbe
         });
     }
 
+    // Handling the onChange events on the inputs, and give real time feedback to the user
+
+    const [isMessageCorrect, setIsMessageCorrect] = useState(true);
+
+    function handleInputOnChange(event) {
+        const field = event.target.name;
+        const inputValue = event.target.value;
+        let fieldValidation = {};
+        if (event.target.value === '') {
+            return true;
+        } else if (event.target.value !== '') {
+            if (field === 'user_firstname' || field === 'user_lastname') {
+                fieldValidation = validateName(inputValue);
+            } else if (field === 'user_email') {
+                fieldValidation = validateEmail(inputValue);
+            } else if (field === 'message') {
+                fieldValidation = validateMessage(inputValue);
+            }
+            return fieldValidation.response ? true : false;
+        }
+    }
+
     return (
         <form ref={form}
             onSubmit={sendEmail}
@@ -54,24 +77,31 @@ function ContactForm({ preferredLanguage, firstName, lastName, email, phoneNumbe
             <div className={classes.contact_form_fields}>
                 <div className={classes.contact_form_infos}>
                     <TextInput name="user_firstname"
-                        label={firstName} 
+                        label={firstName}
                         errorMsg={firstNameErrorMsg}
-                        preferredLanguage={preferredLanguage}/>
+                        preferredLanguage={preferredLanguage}
+                        onChange={handleInputOnChange} />
                     <TextInput name="user_lastname"
-                        label={lastName} 
+                        label={lastName}
                         errorMsg={lastNameErrorMsg}
-                        preferredLanguage={preferredLanguage}/>
+                        preferredLanguage={preferredLanguage}
+                        onChange={handleInputOnChange} />
                     <TextInput name="user_email"
-                        label={email} 
+                        label={email}
                         errorMsg={emailErrorMsg}
-                        preferredLanguage={preferredLanguage}/>
+                        preferredLanguage={preferredLanguage}
+                        onChange={handleInputOnChange} />
                     <TextInput name="user_phonenumber"
                         label={phoneNumber} />
                 </div>
                 <div className={classes.contact_form_message}>
                     <label>{message}</label>
-                    <textarea name="message" />
-                    {messageErrorMsg[preferredLanguage]? <p className={classes.error_msg}>{messageErrorMsg[preferredLanguage]}</p> : null}
+                    <textarea name="message" 
+                    onChange={(event) => setIsMessageCorrect(handleInputOnChange(event))}
+                    style={{
+                        border: !isMessageCorrect && '1px solid red'
+                    }}/>
+                    {messageErrorMsg[preferredLanguage] ? <p className={classes.error_msg}>{messageErrorMsg[preferredLanguage]}</p> : null}
                 </div>
             </div>
             <input type="submit"

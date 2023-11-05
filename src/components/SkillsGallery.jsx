@@ -67,7 +67,6 @@ function SkillsGallery({ preferredLanguage }) {
                         )
                     })
                 }
-                {/* <img src={`src/assets/skills_cards/card_${preferredLanguage}.svg`} className={`${classes.skills_gallery_title} ${isOpen && classes.card4}`} alt='Skills'/> */}
                 <div className={`${classes.card} ${isOpen && classes.card2}`}></div>
                 <div className={`${classes.card} ${isOpen && classes.card3}`}></div>
                 <div className={classes.folder} onClick={() => setIsOpen(!isOpen)}>

@@ -58,3 +58,11 @@
     50%  { transform: translate(0, 3px); }
     100%   { transform: translate(0, 0px); }    
 }
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+    .card_wrapper_position {
+        position: relative;
+    }
+}

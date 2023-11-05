@@ -17,7 +17,7 @@ function Header({ scrollValue }) {
     // useEffect to call handleOnScroll and update the classes of the header
     useEffect(() => {
         handleOnScroll();
-    },[scrollValue]);
+    }, [scrollValue]);
 
     useEffect(() => {
         if (isScrolled) {
@@ -41,19 +41,35 @@ function Header({ scrollValue }) {
         }
     }
 
+    // Handling the menu for mobiles / tablets
+
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <header className={isScrolled ? `${classes.header} ${classes.scrolled}` : `${classes.header}`}>
             <div className={classes.logo}></div>
-            <nav className={classes.nav}>
+            <nav className={isOpen ? `${classes.nav} ${classes.open}` : `${classes.nav}`}>
                 {navLinks.map((link) => {
                     return (
-                        <Link key={link.url} className={`${classes.link} ${linksClass}`} to={link.url}>{link.text[preferredLanguage]}</Link>
-                        
+                        <Link key={link.url}
+                            className={`${classes.link} ${linksClass}`}
+                            to={link.url}
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {link.text[preferredLanguage]}
+                        </Link>
+
                     )
                 })}
-                <LanguagePicker/>
-                <ThemeToggle/>
+                <LanguagePicker />
+                <ThemeToggle />
             </nav>
+            <div className={isOpen ? `${classes.burger_menu} ${classes.open}` : `${classes.burger_menu}`}
+                onClick={() => setIsOpen(!isOpen)}>
+                <span className={`${classes.burger_menu_bar} ${classes.top_bar}`}></span>
+                <span className={`${classes.burger_menu_bar} ${classes.middle_bar}`}></span>
+                <span className={`${classes.burger_menu_bar} ${classes.bottom_bar}`}></span>
+            </div>
         </header>
     )
 }

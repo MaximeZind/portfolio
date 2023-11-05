@@ -130,3 +130,28 @@
     width: 50%;
     fill: rgb(196, 196, 196);
 }
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    .landing_banner{
+        padding-top: 30px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 40% 60%
+    }
+
+    .landing_banner_left {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .landing_banner_clouds_right {
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+
+    .cloud1, .cloud2, .cloud3  {
+        max-height: 150%;
+    }
+  }

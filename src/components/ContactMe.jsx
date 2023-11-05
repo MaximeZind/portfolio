@@ -4,7 +4,7 @@ import ContactForm from './ContactForm';
 import contactFormFields from '../data/contactMeFields.json';
 import { useEffect, useRef, useState } from 'react';
 
-function ContactMe({ preferredLanguage, scrollableContainer }) {
+function ContactMe({ preferredLanguage, scrollableContainer, setIsModalOpen }) {
 
     const contactMeRef = useRef(null);
     const titleRef = useRef(null)
@@ -44,7 +44,8 @@ function ContactMe({ preferredLanguage, scrollableContainer }) {
                 email={contactFormFields.email[preferredLanguage]}
                 phoneNumber={contactFormFields.phoneNumber[preferredLanguage]}
                 message={contactFormFields.message[preferredLanguage]}
-                send={contactFormFields.send[preferredLanguage]} />
+                send={contactFormFields.send[preferredLanguage]} 
+                setIsModalOpen={setIsModalOpen}/>
         </section>
     )
 }
@@ -57,4 +58,5 @@ ContactMe.propTypes = {
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(Element) })
     ]),
+    setIsModalOpen: PropTypes.func.isRequired,
 }

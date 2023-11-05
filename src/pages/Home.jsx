@@ -9,6 +9,7 @@ import ProjectsGallery from '../components/ProjectsGallery';
 import ProjectInfos from '../components/ProjectInfos';
 import { getProject } from '../utils/getProjectsData';
 import ContactMe from '../components/ContactMe';
+import Modal from '../components/Modal';
 
 function Home({ }) {
 
@@ -51,6 +52,10 @@ function Home({ }) {
         }
     }, [currentProjectId]);
 
+    // Everything that's got to do with the Modal (after a message is sent)
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <>
             <main ref={mainRef} className={classes.main}>
@@ -62,7 +67,8 @@ function Home({ }) {
                     setIsProjectInfosOpen={setIsProjectInfosOpen}
                     setCurrentProjectId={setCurrentProjectId} />
                 <ContactMe preferredLanguage={preferredLanguage}
-                    scrollableContainer={mainRef} />
+                    scrollableContainer={mainRef} 
+                    setIsModalOpen={setIsModalOpen}/>
             </main>
             {isProjectInfosOpen ?
                 <ProjectInfos id={currentProject.id}
@@ -73,6 +79,17 @@ function Home({ }) {
                     mockup={currentProject.mockup}
                     stack={currentProject.stack}
                 /> : null}
+            {isModalOpen ?
+                <Modal closeModal={() => setIsModalOpen(false)}>
+                    <p>
+                        {
+                            preferredLanguage === 'en-US' && 'Your email has been sent. I will get back to you ASAP!'
+                        }
+                        {
+                            preferredLanguage === 'fr-FR' && 'Votre email a bien été envoyé. Je vous répondrai dès que possible!'
+                        }
+                    </p>
+                </Modal> : null}
         </>
 
     )

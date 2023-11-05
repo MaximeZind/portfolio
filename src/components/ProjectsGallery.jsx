@@ -11,6 +11,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
 
     const projects = getProjects();
     const galleryRef = useRef(null);
+    const titleRef = useRef(null);
     const [titleScrollLeft, setTitleScrollLeft] = useState(0);
 
     //
@@ -18,14 +19,15 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
         function handleScroll() {
             if (galleryRef.current) {
                 const rect = galleryRef.current.getBoundingClientRect();
-                // console.log(rect.top);
-                // console.log(window.innerHeight);
+                const titleRect = titleRef.current.getBoundingClientRect();
                 if (rect.top <= 0 && rect.bottom > window.innerHeight) {
                     setIsProjectInfosOpen(true);
                 } else if (rect.top > 0 || rect.bottom <= window.innerHeight) {
                     setIsProjectInfosOpen(false);
                 }
+                if (rect.top <= window.innerHeight) {
                     setTitleScrollLeft(rect.top - window.innerHeight);
+                }
             }
         }
 
@@ -39,6 +41,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
         <section className={classes.projects_gallery} id='projects'>
             <img className={classes.hook} src={hook} alt="hook" />
             <h2 className={classes.projects_gallery_title}
+            ref={titleRef}
             style={{
                 transform: `translateX(${titleScrollLeft/5}px)`
             }}>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Galerie des projets'}</h2>

@@ -7,13 +7,17 @@ import { useEffect, useRef, useState } from 'react';
 function ContactMe({ preferredLanguage, scrollableContainer }) {
 
     const contactMeRef = useRef(null);
+    const titleRef = useRef(null)
     const [titleScrollLeft, setTitleScrollLeft] = useState(0);
 
     useEffect(() => {
         function handleScroll() {
             if (contactMeRef.current) {
                 const rect = contactMeRef.current.getBoundingClientRect();
-                setTitleScrollLeft(rect.top - window.innerHeight);
+                const titleRect = titleRef.current.getBoundingClientRect();
+                if (rect.top <= window.innerHeight) {
+                    setTitleScrollLeft(rect.top - window.innerHeight);
+                }
             }
         }
 
@@ -28,12 +32,14 @@ function ContactMe({ preferredLanguage, scrollableContainer }) {
             ref={contactMeRef}
             id='contactme'>
             <h2 className={classes.contact_me_title}
+                ref={titleRef}
                 style={{
                     transform: `translateX(${titleScrollLeft / 5}px)`
                 }}>
                 {preferredLanguage === 'en-US' ? 'Contact me' : 'Me contacter'}
             </h2>
-            <ContactForm firstName={contactFormFields.firstName[preferredLanguage]}
+            <ContactForm preferredLanguage={preferredLanguage}
+                firstName={contactFormFields.firstName[preferredLanguage]}
                 lastName={contactFormFields.lastName[preferredLanguage]}
                 email={contactFormFields.email[preferredLanguage]}
                 phoneNumber={contactFormFields.phoneNumber[preferredLanguage]}

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import classes from '../styles/TextInput.module.css';
 import PropTypes from 'prop-types';
 
-function TextInput({ name, label, errorMsg, onChange, defaultValue }) {
+function TextInput({ name, label, errorMsg, onChange, defaultValue, preferredLanguage }) {
 
     const input = useRef(null);
     const container = useRef(null);
@@ -47,7 +47,7 @@ function TextInput({ name, label, errorMsg, onChange, defaultValue }) {
                 id={name}
                 name={name}
                 onChange={onChange ? onChange : handleOnChange} />
-            {errorMsg ? <p className={classes.error_msg}>{errorMsg}</p> : null}
+            {errorMsg ? <p className={classes.error_msg}>{errorMsg[preferredLanguage]}</p> : null}
         </div>
     );
 }
@@ -55,9 +55,13 @@ function TextInput({ name, label, errorMsg, onChange, defaultValue }) {
 TextInput.propTypes = {
     name: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
-    errorMsg: PropTypes.string,
+    errorMsg: PropTypes.shape({
+        'en-US': PropTypes.string,
+        'fr-FR': PropTypes.string,
+    }),
     onChange: PropTypes.func,
     defaultValue: PropTypes.string,
+    preferredLanguage: PropTypes.string,
 }
 
 export default TextInput;

@@ -67,7 +67,9 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                                     preview={project.preview}
                                     mockup={project.mockup}
                                     setCurrentProjectId={setCurrentProjectId}
-                                    scrollableContainer={scrollableContainer} />
+                                    scrollableContainer={scrollableContainer} 
+                                    preferredLanguage={preferredLanguage}/>
+                                    
                             )
                         })
                     }

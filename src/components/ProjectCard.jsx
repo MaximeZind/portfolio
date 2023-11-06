@@ -38,7 +38,7 @@ function ProjectCard({ title, thumbnail, description, repo, preview, mockup, sta
                         <div className={classes.project_card_content_text_links}>
                             {
                                 repo &&
-                                <Link to={repo} target="_blank">
+                                <Link to={repo} target="_blank" title='repo'>
                                     <span className={`${classes.links_icon} ${classes.repo}`}>
                                         <img src={github_logo} alt="Github logo" />
                                     </span>
@@ -46,7 +46,7 @@ function ProjectCard({ title, thumbnail, description, repo, preview, mockup, sta
                             }
                             {
                                 preview &&
-                                <Link to={preview} target="_blank">
+                                <Link to={preview} target="_blank" title={preferredLanguage === 'en-US' ? 'preview' : 'aperçu'}>
                                     <span className={`${classes.links_icon} ${classes.preview}`}>
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             version="1.1"
@@ -64,7 +64,7 @@ function ProjectCard({ title, thumbnail, description, repo, preview, mockup, sta
                             }
                             {
                                 mockup &&
-                                <Link to={mockup} target="_blank">
+                                <Link to={mockup} target="_blank" title={preferredLanguage === 'en-US' ? 'mockup' : 'maquette'}>
                                     <span className={`${classes.links_icon} ${classes.mockup}`}>
                                         <img src={figma_logo} alt="Figma logo" />
                                     </span>

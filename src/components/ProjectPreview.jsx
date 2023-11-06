@@ -7,7 +7,7 @@ import figma_logo from '../assets/stack_icons/figma_logo.svg';
 
 // Will be displayed, along with the ProjectInfos on the left, on screen > 768px
 // I could not find a way to make it work, so I made classic boxes for screens <= 768px
-function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurrentProjectId, scrollableContainer }) {
+function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurrentProjectId, scrollableContainer, preferredLanguage }) {
 
     const previewRef = useRef(null);
     const [isCurrentPreview, setIsCurrentPreview] = useState(false);
@@ -57,7 +57,7 @@ function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurren
                 <div className={classes.stack}>
                 {
                         repo &&
-                        <Link to={repo} target="_blank">
+                        <Link to={repo} target="_blank" title='repo'>
                             <span className={`${classes.stack_icon} ${classes.repo}`}>
                                 <img src={github_logo} alt="Github logo" />
                             </span>
@@ -65,7 +65,7 @@ function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurren
                     }
                     {
                         preview &&
-                        <Link to={preview} target="_blank">
+                        <Link to={preview} target="_blank" title={preferredLanguage === 'en-US' ? 'preview' : 'aperçu'} >
                             <span className={`${classes.stack_icon} ${classes.preview}`}>
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     version="1.1"
@@ -83,7 +83,7 @@ function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurren
                     }
                     {
                         mockup &&
-                        <Link to={mockup} target="_blank">
+                        <Link to={mockup} target="_blank" title={preferredLanguage === 'en-US' ? 'mockup' : 'maquette'}>
                             <span className={`${classes.stack_icon} ${classes.mockup}`}>
                                 <img src={figma_logo} alt="Figma logo" />
                             </span>
@@ -109,5 +109,6 @@ ProjectPreview.propTypes = {
     scrollableContainer: PropTypes.oneOfType([
         PropTypes.func,
         PropTypes.shape({ current: PropTypes.instanceOf(Element) })
-    ])
+    ]),
+    preferredLanguage: PropTypes.string.isRequired,
 }

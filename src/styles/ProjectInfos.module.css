@@ -68,3 +68,13 @@
         opacity: 0;
     }
 }
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+
+    .project_infos_wrapper {
+        display: none;
+    }
+
+}

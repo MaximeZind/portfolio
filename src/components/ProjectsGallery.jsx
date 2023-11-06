@@ -4,6 +4,7 @@ import hook from '../assets/hook.svg';
 import { getProjects } from '../utils/getProjectsData';
 import ProjectPreview from './ProjectPreview';
 import { useEffect, useRef, useState } from 'react';
+import ProjectCard from './ProjectCard';
 
 
 function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectInfosOpen, setCurrentProjectId }) {
@@ -20,13 +21,20 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
             if (galleryRef.current) {
                 const rect = galleryRef.current.getBoundingClientRect();
                 const titleRect = titleRef.current.getBoundingClientRect();
+                const startWidth = titleRect.width;
                 if (rect.top <= 0 && rect.bottom > window.innerHeight) {
                     setIsProjectInfosOpen(true);
                 } else if (rect.top > 0 || rect.bottom <= window.innerHeight) {
                     setIsProjectInfosOpen(false);
                 }
+                // Slides the title to the left, but no further than 50px away from the edge
                 if (rect.top <= window.innerHeight) {
-                    setTitleScrollLeft(rect.top - window.innerHeight);
+                    const offset = (window.innerHeight - rect.top) / 7;
+                    if (window.innerWidth > (startWidth + offset)) {
+                        setTitleScrollLeft(-offset);
+                    } else if (window.innerWidth <= (startWidth + offset)) {
+                        setTitleScrollLeft(startWidth - window.innerWidth);
+                    }
                 }
             }
         }
@@ -38,16 +46,16 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
     }, []);
 
     return (
-        <section className={classes.projects_gallery} id='projects'>
+        <section ref={galleryRef} className={classes.projects_gallery} id='projects'>
             <img className={classes.hook} src={hook} alt="hook" />
             <h2 className={classes.projects_gallery_title}
-            ref={titleRef}
-            style={{
-                transform: `translateX(${titleScrollLeft/5}px)`
-            }}>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Galerie des projets'}</h2>
-            <div  className={classes.projects_gallery_divider}>
+                ref={titleRef}
+                style={{
+                    transform: `translateX(${titleScrollLeft}px)`
+                }}>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Galerie des projets'}</h2>
+            <div className={classes.projects_gallery_divider}>
                 <div className={classes.project_infos_background}></div>
-                <div ref={galleryRef} className={classes.projects_gallery_previews}>
+                <div className={classes.projects_gallery_previews}>
                     {
                         projects.map((project) => {
                             return (
@@ -64,6 +72,24 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                         })
                     }
                 </div>
+            </div>
+            <div className={classes.projects_gallery_classic}>
+                {
+                    projects.map((project) => {
+                        return (
+                            <ProjectCard key={project.id}
+                                title={project.title}
+                                thumbnail={project.thumbnail}
+                                description={project.description[preferredLanguage]}
+                                repo={project.repo}
+                                preview={project.preview}
+                                mockup={project.mockup}
+                                stack={project.stack}
+                                dateOfCreation={project.dateOfCreation}
+                                preferredLanguage={preferredLanguage} />
+                        )
+                    })
+                }
             </div>
         </section>
     )

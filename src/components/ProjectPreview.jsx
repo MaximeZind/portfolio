@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import github_logo from '../assets/stackIcons/github_logo.png';
 import figma_logo from '../assets/stackIcons/figma_logo.svg';
 
-
+// Will be displayed, along with the ProjectInfos on the left, on screen > 768px
+// I could not find a way to make it work, so I made classic boxes for screens <= 768px
 function ProjectPreview({ id, title, thumbnail, repo, preview, mockup, setCurrentProjectId, scrollableContainer }) {
 
     const previewRef = useRef(null);

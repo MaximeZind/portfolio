@@ -15,8 +15,15 @@ function ContactMe({ preferredLanguage, scrollableContainer, setIsModalOpen }) {
             if (contactMeRef.current) {
                 const rect = contactMeRef.current.getBoundingClientRect();
                 const titleRect = titleRef.current.getBoundingClientRect();
+                const startWidth = titleRect.width;
                 if (rect.top <= window.innerHeight) {
-                    setTitleScrollLeft(rect.top - window.innerHeight);
+                    const offset = (window.innerHeight - rect.top) / 4;
+                    // Slides the title to the left, but no further than 50px away from the edge
+                    if (window.innerWidth > (startWidth + offset)) {
+                        setTitleScrollLeft(-offset);
+                    } else if (window.innerWidth <= (startWidth + offset)) {
+                        setTitleScrollLeft(startWidth - window.innerWidth);
+                    }
                 }
             }
         }
@@ -34,7 +41,7 @@ function ContactMe({ preferredLanguage, scrollableContainer, setIsModalOpen }) {
             <h2 className={classes.contact_me_title}
                 ref={titleRef}
                 style={{
-                    transform: `translateX(${titleScrollLeft / 5}px)`
+                    transform: `translateX(${titleScrollLeft}px)`
                 }}>
                 {preferredLanguage === 'en-US' ? 'Contact me' : 'Me contacter'}
             </h2>
@@ -44,8 +51,8 @@ function ContactMe({ preferredLanguage, scrollableContainer, setIsModalOpen }) {
                 email={contactFormFields.email[preferredLanguage]}
                 phoneNumber={contactFormFields.phoneNumber[preferredLanguage]}
                 message={contactFormFields.message[preferredLanguage]}
-                send={contactFormFields.send[preferredLanguage]} 
-                setIsModalOpen={setIsModalOpen}/>
+                send={contactFormFields.send[preferredLanguage]}
+                setIsModalOpen={setIsModalOpen} />
         </section>
     )
 }

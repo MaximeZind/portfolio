@@ -10,8 +10,20 @@
     color: var(--secondary-color);
     position: absolute;
     top: 0px;
-    right: 100px;
+    right: 0px;
     z-index: 1000;
     transition: transform .8s ease-out;
     opacity: .9;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+
+    .contact_me_title {
+        font-size: 2.1rem;
+    }
+    .contact_me {
+        padding: 20px;
+    }
 }

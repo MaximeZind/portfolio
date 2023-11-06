@@ -7,7 +7,7 @@
     position: absolute;
     top: 10px;
     left: 0;
-    color: var(--tertiary-color);
+    color: var(--senary-color);
     z-index: 2;
     transition: transform 150ms ease-out, font-size 150ms ease-out, color 150ms ease-out;
     padding-left: 3px;
@@ -17,7 +17,7 @@
 .focused .label{
     transform: translateY(-125%);
     font-size: .75em;
-    color: #000000;
+    color: var(--senary-color);
 }
 
 .label:hover{

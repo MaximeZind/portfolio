@@ -70,7 +70,8 @@ function SkillsGallery({ preferredLanguage }) {
                 <div className={`${classes.card} ${isOpen && classes.card2}`}></div>
                 <div className={`${classes.card} ${isOpen && classes.card3}`}></div>
                 <div className={classes.folder} onClick={() => setIsOpen(!isOpen)}>
-                    <p>SKILLSET - Do not open</p>
+                    <h2>{preferredLanguage === 'en_US' ? 'Skillset' : 'Compétences'}</h2>
+                    <p>{preferredLanguage === 'en_US' ? 'Do not open' : 'Ne pas ouvrir'}</p>
                 </div>
             </div>
         </section>

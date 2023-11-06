@@ -1,7 +1,7 @@
 .projects_gallery {
     position: relative;
     min-height: 100vh;
-    background-color: var(--ternary-color);
+    background-color: var(--secondary-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +17,7 @@
     font-family: 'Raleway';
     font-size: 90px;
     text-transform: uppercase;
-    color: var(--secondary-color);
+    color: var(--quinary-color);
     position: absolute;
     top: 100px;
     right: 0px;

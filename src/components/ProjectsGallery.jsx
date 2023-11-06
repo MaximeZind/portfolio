@@ -6,7 +6,6 @@ import ProjectPreview from './ProjectPreview';
 import { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
 
-
 function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectInfosOpen, setCurrentProjectId }) {
 
 
@@ -20,20 +19,26 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
         function handleScroll() {
             if (galleryRef.current) {
                 const rect = galleryRef.current.getBoundingClientRect();
-                const titleRect = titleRef.current.getBoundingClientRect();
-                const startWidth = titleRect.width;
                 if (rect.top <= 0 && rect.bottom > window.innerHeight) {
                     setIsProjectInfosOpen(true);
                 } else if (rect.top > 0 || rect.bottom <= window.innerHeight) {
                     setIsProjectInfosOpen(false);
                 }
-                // Slides the title to the left, but no further than 50px away from the edge
+                // Slides the title to the left, but no further than 10px away from the edge
                 if (rect.top <= window.innerHeight) {
-                    const offset = (window.innerHeight - rect.top) / 7;
-                    if (window.innerWidth > (startWidth + offset)) {
-                        setTitleScrollLeft(-offset);
-                    } else if (window.innerWidth <= (startWidth + offset)) {
-                        setTitleScrollLeft(startWidth - window.innerWidth);
+                    // const margins = window.innerWidth/8;
+                    const margins = 10;
+                    console.log(margins);
+                    const titleRect = titleRef.current.getBoundingClientRect();
+                    const startWidth = titleRect.width;
+                    const offset = (window.innerHeight - titleRect.top);
+                    const vector = window.innerWidth - (startWidth + 2*margins);
+                    const ratio = vector / window.innerHeight;
+                    const translateX = -(ratio * offset)
+                    if (window.innerWidth > (startWidth + 2*margins + translateX)) {
+                        setTitleScrollLeft(translateX);
+                    } else if (window.innerWidth <= (startWidth + 2*margins + translateX)) {
+                        setTitleScrollLeft(-vector);
                     }
                 }
             }

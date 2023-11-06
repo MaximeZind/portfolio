@@ -48,7 +48,7 @@
 }
 
 .skills_card > p {
-    color: var(--ternary-color);
+    color: rgb(231, 231, 231);
     font-size: 1.2rem;
     font-weight: bold;
 }

@@ -36,10 +36,15 @@
     grid-template-rows: 20% 80%;
 }
 
+.contact_form_message > label {
+    color: var(--senary-color);
+}
+
 .contact_form_message > textarea {
     height: 100%;
     width: 100%;
-    background-color: var(--quinary-color);
+    background-color: var(--secondary-color);
+    color: var(--quarternary-color);
     resize: none;
 }
 
@@ -53,6 +58,7 @@
     transition: transform .3s ease, box-shadow .3s ease;
     border: none;
     background-color: var(--secondary-color);
+    color: var(--senary-color);
 }
 
 .contact_form_submit_button:hover {

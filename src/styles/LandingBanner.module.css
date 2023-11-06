@@ -30,7 +30,8 @@
 
 .landing_banner_hero_content_text {
     text-align: left;
-    color: var(--ternary-color);
+    /* color: var(--ternary-color); */
+    color: var(--quinary-color);
     width: fit-content;
 }
 .landing_banner_hero_content_text > p {
@@ -41,7 +42,7 @@
 }
 .landing_banner_hero_content_text > h1 > span {
     font-size: 2rem;
-    color: var(--secondary-color);
+    color: var(--ternary-color);
 }
 .landing_banner_hero_content_text > h2 {
     font-size: 1.6rem;
@@ -71,6 +72,7 @@
 
 .resume_button {
     background-color: var(--secondary-color);
+    color: var(--senary-color);
 }
 
 /************** Clouds *************/

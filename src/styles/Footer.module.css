@@ -1,5 +1,5 @@
 .footer {
-    background-color: var(--quarternary-color);
+    background-color: var(--secondary-color);
 }
 
 .footer_main_content {
@@ -21,7 +21,7 @@
 
 .footer_right_nav {
     height: 50%;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--ternary-color);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -52,7 +52,7 @@
 }
 
 .footer_signature {
-    color: var(--secondary-color);
+    color: var(--quarternary-color);
 }
 
 @media (max-width: 426px) {

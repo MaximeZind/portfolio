@@ -63,3 +63,18 @@
     transform: translateZ(-1.5px) scale(1.15);
     transform-style: preserve-3d;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+
+    .fisherman_parallax_section {
+        position: relative;
+        transform-style: preserve-3d;
+        height: 1200px;
+        z-index: -1;
+        margin-top: 500px;
+        --margin_top: 0px;
+    }
+    
+}

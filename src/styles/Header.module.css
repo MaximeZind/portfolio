@@ -120,7 +120,7 @@
     animation-name: slide_left_fade_in;
     animation-duration: .7s;
     animation-fill-mode: forwards;
-    z-index: 500;
+    z-index: 498;
 }
 
 .to_top_link {

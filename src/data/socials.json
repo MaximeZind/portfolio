@@ -1,12 +1,12 @@
 [
     {
         "name" : "linkedin",
-        "icon" : "src/assets/socials_icons/linkedin.svg",
+        "icon" : "/assets/socials_icons/linkedin.svg",
         "link" : "https://www.linkedin.com/in/maxime-zinderstein-38391517b/"
     },
     {
         "name" : "github",
-        "icon" : "src/assets/stackIcons/github_logo.png",
+        "icon" : "/assets/stackIcons/github_logo.png",
         "link" : "https://github.com/MaximeZind"
     }
 ]

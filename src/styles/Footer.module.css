@@ -21,7 +21,7 @@
 
 .footer_right_nav {
     height: 50%;
-    border-bottom: 1px solid var(--ternary-color);
+    border-bottom: 1px solid var(--senary-color);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

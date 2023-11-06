@@ -1,6 +1,13 @@
 [
     {
         "text" : {
+            "en-US" : "Skills",
+            "fr-FR" : "Compétences"
+        },
+        "url" : "#skills"
+    },
+    {
+        "text" : {
             "en-US" : "Projects",
             "fr-FR" : "Projets"
         },

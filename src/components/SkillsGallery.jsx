@@ -53,7 +53,7 @@ function SkillsGallery({ preferredLanguage }) {
 
 
     return (
-        <section className={classes.skills_gallery}>
+        <section className={classes.skills_gallery} id='skills'>
             <div className={classes.skills_gallery_cards}>
             <div className={`${classes.card} ${isOpen && classes.card1}`}></div>
                 {

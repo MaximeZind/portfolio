@@ -82,8 +82,7 @@
 .burger_menu_bar {
     width: 30px;
     height: 2px;
-    background-color: black;
-    /* transition: transform .5s ease-in-out; */
+    background-color: var(--senary-color);
 }
 
 .open > .top_bar {

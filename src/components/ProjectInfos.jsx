@@ -19,7 +19,7 @@ function ProjectInfos({ id, title, description, stack}) {
                         return (
                             <span key={tech}
                                 className={classes.project_infos_icon}>
-                                <img src={lowerCaseTech === 'figma' ? `src/assets/stackIcons/${lowerCaseTech}_logo.svg` : `src/assets/stackIcons/${lowerCaseTech}_logo.png`}
+                                <img src={lowerCaseTech === 'figma' ? `/assets/stack_icons/${lowerCaseTech}_logo.svg` : `/assets/stack_icons/${lowerCaseTech}_logo.png`}
                                     alt={tech}
                                     className={classes.project_infos_icon} />
                             </span>

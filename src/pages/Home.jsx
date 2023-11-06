@@ -10,6 +10,7 @@ import ProjectInfos from '../components/ProjectInfos';
 import { getProject } from '../utils/getProjectsData';
 import ContactMe from '../components/ContactMe';
 import Modal from '../components/Modal';
+import Footer from '../components/baselayout/Footer';
 
 function Home({ }) {
 
@@ -67,8 +68,9 @@ function Home({ }) {
                     setIsProjectInfosOpen={setIsProjectInfosOpen}
                     setCurrentProjectId={setCurrentProjectId} />
                 <ContactMe preferredLanguage={preferredLanguage}
-                    scrollableContainer={mainRef} 
-                    setIsModalOpen={setIsModalOpen}/>
+                    scrollableContainer={mainRef}
+                    setIsModalOpen={setIsModalOpen} />
+                <Footer />
             </main>
             {isProjectInfosOpen ?
                 <ProjectInfos id={currentProject.id}

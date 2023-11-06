@@ -1,0 +1,64 @@
+.footer {
+    background-color: var(--quarternary-color);
+}
+
+.footer_main_content {
+    height: 300px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    padding: 70px;
+}
+
+.footer_logo {
+    width: 30%;
+}
+
+.footer_right {
+    width: 70%;
+    height: 100%;
+}
+
+.footer_right_nav {
+    height: 50%;
+    border-bottom: 1px solid var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer_right_socials {
+    height: 50%;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 25px;
+}
+
+.socials_icon > img {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github {
+    background-color: white;
+    border-radius: 6px;
+}
+
+.footer_signature {
+    color: var(--secondary-color);
+}
+
+@media (max-width: 426px) {
+
+    .footer {
+        padding: 10px;
+    }
+
+}

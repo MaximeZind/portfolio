@@ -58,7 +58,6 @@ function Header({ scrollValue }) {
                         >
                             {link.text[preferredLanguage]}
                         </Link>
-
                     )
                 })}
                 <LanguagePicker />

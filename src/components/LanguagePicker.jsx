@@ -72,7 +72,7 @@ function LanguagePicker() {
     return (
         <div className={classes.language_picker_container} onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter}>
             <div className={classes.language_picker_header} onClick={isOpen ? handleClose : handleOpen}>
-                <img src={languageFlags[preferredLanguage]} className={classes.flag} />
+                <img src={languageFlags[preferredLanguage]} className={classes.flag} alt={preferredLanguage}/>
                 <svg xmlns="http://www.w3.org/2000/svg"
                     width="12px"
                     height="7px"
@@ -104,7 +104,7 @@ function LanguagePicker() {
                         return (
                             key !== preferredLanguage ?
                                 <span key={key} className={classes.language_picker_options_list_option} onClick={() => handleOnClick(key)}>
-                                    <img  src={languageFlags[key]} className={classes.flag} />
+                                    <img  src={languageFlags[key]} className={classes.flag} alt={key}/>
                                 </span> : null
                         )
                     })}

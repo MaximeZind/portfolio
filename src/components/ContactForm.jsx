@@ -99,8 +99,9 @@ function ContactForm({ preferredLanguage, firstName, lastName, email, phoneNumbe
                             label={phoneNumber} />
                     </div>
                     <div className={classes.contact_form_message}>
-                        <label>{message}</label>
+                        <label htmlFor='message'>{message}</label>
                         <textarea name="message"
+                        id='message'
                             onChange={(event) => setIsMessageCorrect(handleInputOnChange(event))}
                             style={{
                                 border: !isMessageCorrect && '1px solid red'

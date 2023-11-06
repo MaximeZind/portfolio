@@ -81,7 +81,7 @@ function ProjectCard({ title, thumbnail, description, repo, preview, mockup, sta
                             return (
                                 <span key={tech}
                                     className={classes.project_techs_icon_span}>
-                                    <img src={lowerCaseTech === 'figma' ? `src/assets/stackIcons/${lowerCaseTech}_logo.svg` : `src/assets/stackIcons/${lowerCaseTech}_logo.png`}
+                                    <img src={lowerCaseTech === 'figma' ? `/assets/stackIcons/${lowerCaseTech}_logo.svg` : `/assets/stackIcons/${lowerCaseTech}_logo.png`}
                                         alt={tech}
                                         className={classes.project_techs_icon} />
                                 </span>

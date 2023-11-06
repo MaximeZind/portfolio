@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function LandingBanner({ preferredLanguage, scrollValue }) {
 
     return (
-        <section className={classes.landing_banner}>
+        <section className={classes.landing_banner} id='top'>
             <div className={classes.landing_banner_left}>
                 <div className={classes.landing_banner_hero_content}>
                     <div className={classes.landing_banner_hero_content_text}>

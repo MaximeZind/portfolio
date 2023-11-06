@@ -103,7 +103,43 @@
     animation-fill-mode: forwards;
 }
 
+/* Link to top */
 
+.to_top {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: rgb(0,0,0,0.4);
+    border: 3px solid var(--senary-color);
+    animation-name: slide_left_fade_in;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+    z-index: 500;
+}
+
+.to_top_link {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.to_top:hover {
+    cursor: pointer;
+}
+
+.to_top_link > svg > g > g > g > g > g > path {
+    fill: var(--senary-color);
+}
+
+/* Animations */
 @keyframes top_bar_anim_open {
     0% {
 
@@ -179,6 +215,17 @@
     }
     100% {
         transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@keyframes slide_left_fade_in{
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
     }
 }
 

@@ -2,8 +2,8 @@ import classes from '../styles/ProjectPreview.module.css';
 import PropTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import github_logo from '../assets/stackIcons/github_logo.png';
-import figma_logo from '../assets/stackIcons/figma_logo.svg';
+import github_logo from '../assets/stack_icons/github_logo.png';
+import figma_logo from '../assets/stack_icons/figma_logo.svg';
 
 // Will be displayed, along with the ProjectInfos on the left, on screen > 768px
 // I could not find a way to make it work, so I made classic boxes for screens <= 768px

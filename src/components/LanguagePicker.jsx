@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import classes from '../styles/LanguagePicker.module.css';
 
-import fr_flag from '../assets/countriesFlags/fr-fr_flag.png';
-import us_flag from '../assets/countriesFlags/en-us_flag.png';
+import fr_flag from '../assets/countries_flags/fr-fr_flag.png';
+import us_flag from '../assets/countries_flags/en-us_flag.png';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateLanguage } from '../actions/language.action';
 

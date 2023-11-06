@@ -1,8 +1,8 @@
 import classes from '../styles/ProjectCard.module.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import github_logo from '../assets/stackIcons/github_logo.png';
-import figma_logo from '../assets/stackIcons/figma_logo.svg';
+import github_logo from '../assets/stack_icons/github_logo.png';
+import figma_logo from '../assets/stack_icons/figma_logo.svg';
 import { useState } from 'react';
 
 function ProjectCard({ title, thumbnail, description, repo, preview, mockup, stack, dateOfCreation, preferredLanguage }) {

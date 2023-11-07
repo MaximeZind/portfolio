@@ -4,20 +4,20 @@
             "en-US" : "Skills",
             "fr-FR" : "Compétences"
         },
-        "url" : "#skills"
+        "url" : "/#skills"
     },
     {
         "text" : {
             "en-US" : "Projects",
             "fr-FR" : "Projets"
         },
-        "url" : "#projects"
+        "url" : "/#projects"
     },
     {
         "text" : {
             "en-US" : "Contact me",
             "fr-FR" : "Me contacter"
         },
-        "url" : "#contactme"
+        "url" : "/#contactme"
     }
 ]

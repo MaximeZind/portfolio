@@ -26,7 +26,7 @@
             "HTML",
             "CSS"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2022-12-02"
     },
     {
@@ -60,7 +60,7 @@
             "HTML",
             "CSS"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2022-12-22"
     },
     {
@@ -91,7 +91,7 @@
             "CSS",
             "JS"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-01-12"
     },
     {
@@ -126,7 +126,7 @@
             "CSS",
             "JS"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-02-03"
     },
     {
@@ -161,7 +161,7 @@
             "CSS",
             "JS"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-02-24"
     },
     {
@@ -193,7 +193,7 @@
             "JS",
             "Jest"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-04-21"
     },
     {
@@ -224,7 +224,7 @@
         "stack": [
             "Figma"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-05-12"
     },
     {
@@ -258,7 +258,7 @@
             "JS",
             "React"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-06-30"
     },
     {
@@ -292,7 +292,7 @@
             "JS",
             "React"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-08-04"
     },
     {
@@ -325,7 +325,7 @@
             "React",
             "Redux"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-08-25"
     },
     {
@@ -338,10 +338,10 @@
         },
         "tasks": {
             "fr-FR": [
-                "Complete overhaul of an old JQuery application",
-                "Creation and publication of 4 plugins on npm",
-                "Performance testing using LightHouse",
-                "End-to-End testing with Cypress"
+                "Refonte complète d'une ancienne application jQuery",
+                "Création et publication de 4 plugins sur npm",
+                "Tests de performance avec LightHouse",
+                "Tests End2End avec Cypress"
             ],
             "en-US": [
                 "Complete overhaul of an old JQuery application",
@@ -361,7 +361,44 @@
             "Redux",
             "Cypress"
         ],
-        "type": "Openclassrooms",
+        "type": "openclassrooms",
         "dateOfCreation": "2023-10-27"
+    },
+    {
+        "id": 12,
+        "title": "Portfolio",
+        "thumbnail": "/assets/projects_thumbnails/portfolio_thumbnail.png",
+        "description": {
+            "fr-FR": "Ma formation d'un an avec OpenClassrooms touchant à son terme, j'ai réfléchi à quel projet créer. Quoi de mieux qu'un portfolio, regroupant tous les projets sur lesquels j'ai travailler, pour illustrer une année d'efforts qui porte ses fruits? J'ai créé le design et ajouté des fonctionnalités au fur et à mesure. Je me suis plus ou moins servi de ce projet comme d'un terrain de jeu (notamment pour la partie avec l'effet de parallax). J'ai pris beaucoup de plaisir à le créer, j'espère que vous en aurez à l'explorer.",
+            "en-US": "As my year long course with OpenClassrooms is coming to an end, I've been thinking about what project to create. What could be better than a portfolio, gathering all the projects I've worked on, to illustrate a year of efforts bearing fruit? I designed it and added features gradually. I used this project more or less as a playground (especially for the part with the parallax effect). I greatly enjoyed creating it, and I hope you will enjoy exploring it."
+        },
+        "tasks": {
+            "fr-FR": [
+                "Construction d'un site web complet de A à Z",
+                "Choix du design",
+                "Création des svg, avec un effet de parallax",
+                "Bonnes performances - selon LightHouse", 
+                "Hébergement et déploiement du site en ligne"
+            ],
+            "en-US": [
+                "Building a complete website from scratch",
+                "Design choices",
+                "Creation of SVGs with a parallax effect",
+                "Optimizing for performance - according to LightHouse",
+                "Hosting and deploying the site online"
+            ]
+        },
+        "repo": "https://github.com/MaximeZind/portfolio",
+        "preview": "https://www.maximezinderstein.com/",
+        "mockup": null,
+        "stack": [
+            "HTML",
+            "CSS",
+            "JS",
+            "React",
+            "Redux"
+        ],
+        "type": "personnalProject",
+        "dateOfCreation": "2023-11-07"
     }
 ]

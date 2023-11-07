@@ -250,7 +250,7 @@
             ]
         },
         "repo": "https://github.com/MaximeZind/P11-Kasa-Platform",
-        "preview": null,
+        "preview": "https://p11-kasa-platform-maxime-zindersteins-projects.vercel.app/",
         "mockup": "https://www.figma.com/file/qEno0LwL4ZLkWyeY59kxp1/UI-Design-Kasa-FR?type=design&node-id=0-1&mode=design",
         "stack": [
             "HTML",

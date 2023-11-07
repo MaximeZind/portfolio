@@ -67,10 +67,12 @@
 .type_picker_type {
     padding: 15px;
     border-bottom: 4px solid var(--primary-color);
+    color: var(--quarternary-color);
 }
 
 .type_picker_type:hover, .selected {
     border-bottom: 4px solid var(--quinary-color);
+    color: var(--quinary-color);
     cursor: pointer;
 }
 

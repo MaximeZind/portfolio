@@ -73,9 +73,10 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
 
     .fisherman_parallax_section {
-        height: 600px;
+        height: 1000px;
+        transform: translateY(150px);
     }
 }

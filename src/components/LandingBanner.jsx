@@ -18,9 +18,11 @@ function LandingBanner({ preferredLanguage, scrollValue }) {
                         <h2>{landingBannerTexts.whoAmI[preferredLanguage]}</h2>
                     </div>
                     <div className={classes.landing_banner_hero_content_buttons}>
-                        <button className={`${classes.resume_button} ${classes.button}`}>
-                            {preferredLanguage === 'en-US' ? "My resume" : 'Mon CV'}
-                        </button>
+                        <Link to='/#skills'>
+                            <button className={`${classes.start_scrolling_button} ${classes.button}`}>
+                                {preferredLanguage === 'en-US' ? "Start scrolling" : 'Explorer'}
+                            </button>
+                        </Link>
                         <Link to='/#contactme'>
                             <button className={`${classes.contactme_button} ${classes.button}`}>
                                 {preferredLanguage === 'en-US' ? "Contact me" : 'Me contacter'}

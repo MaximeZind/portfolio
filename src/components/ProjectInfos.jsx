@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 function ProjectInfos({ id, title, tasks, stack}) {
 
-    console.log(tasks);
     // Why is that outside of the <main> you might ask ?
     // Well, because its 'fixed' position isn't working with the 'perspective: 10px;' in the main.
     // ...And I totally didn't waste 2 hours figuring that one out

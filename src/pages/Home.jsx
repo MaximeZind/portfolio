@@ -59,8 +59,7 @@ function Home({ }) {
 
     // Everything that's got to do with the Modal (after a message is sent)
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
- console.log(currentProject)
+    const [isModalOpen, setIsModalOpen] = useState(false);  
     return (
         <>
             <main ref={mainRef} className={classes.main}>

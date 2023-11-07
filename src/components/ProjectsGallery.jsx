@@ -5,17 +5,32 @@ import { getProjects } from '../utils/getProjectsData';
 import ProjectPreview from './ProjectPreview';
 import { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
+import { sortFromMostRecentToOldest } from '../utils/sort';
 
 function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectInfosOpen, setCurrentProjectId }) {
 
-
+    // Import of the projects array
     const projects = getProjects();
+
+    // Ref of the gallery (to monitor scrolling)
     const galleryRef = useRef(null);
+    // Ref of the title (to slide it according to scrolling)
     const titleRef = useRef(null);
+    // State to update the translateX of the title
     const [titleScrollLeft, setTitleScrollLeft] = useState(0);
+    // Initial position of the title (middle)
     const [titleLeft, setTitleLeft] = useState(0);
 
-    //
+    // Initial amount of projects in the gallery, and the increment for each click on "More"
+    const increment = 4;
+    const [amountOfProjects, setAmountOfProjects] = useState(increment);
+
+    // We sort the projects by most recent
+    const projectsSortedFromMostRecent = sortFromMostRecentToOldest(projects);
+
+    // useEffect used to 
+    // - update the data in ProjectInfos
+    // - Move the section title
     useEffect(() => {
         function handleScroll() {
             if (galleryRef.current) {
@@ -30,7 +45,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                     const titleRect = titleRef.current.getBoundingClientRect();
                     setTitleLeft((window.innerWidth - titleRect.width) / 2);
                     const offset = (window.innerHeight - titleRect.top);
-                    setTitleScrollLeft(-offset/12)
+                    setTitleScrollLeft(-offset / 12)
                 }
             }
         }
@@ -40,6 +55,14 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
             scrollableContainer.current.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    function handleOnClickLoadMore() {
+        if (amountOfProjects + increment <= projectsSortedFromMostRecent.length) {
+            setAmountOfProjects(amountOfProjects + increment);
+        } else if (amountOfProjects + increment > projectsSortedFromMostRecent.length) {
+            setAmountOfProjects(projectsSortedFromMostRecent.length);
+        }
+    }
 
     return (
         <section ref={galleryRef} className={classes.projects_gallery} id='projects'>
@@ -54,8 +77,9 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                 <div className={classes.project_infos_background}></div>
                 <div className={classes.projects_gallery_previews}>
                     {
-                        projects.map((project) => {
-                            return (
+                        projectsSortedFromMostRecent.map((project, index) => {
+
+                            return (index < amountOfProjects ?
                                 <ProjectPreview key={project.id}
                                     id={project.id}
                                     title={project.title}
@@ -64,18 +88,24 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                                     preview={project.preview}
                                     mockup={project.mockup}
                                     setCurrentProjectId={setCurrentProjectId}
-                                    scrollableContainer={scrollableContainer} 
-                                    preferredLanguage={preferredLanguage}/>
-                                    
+                                    scrollableContainer={scrollableContainer}
+                                    preferredLanguage={preferredLanguage} /> : null
+
                             )
                         })
+                    }
+                    {
+                        projectsSortedFromMostRecent.length > amountOfProjects ?
+                            <button className={classes.load_more_button} onClick={handleOnClickLoadMore}>
+                                {preferredLanguage === 'en-US' ? 'Load more' : 'Charger plus'}
+                            </button> : null
                     }
                 </div>
             </div>
             <div className={classes.projects_gallery_classic}>
                 {
-                    projects.map((project) => {
-                        return (
+                    projectsSortedFromMostRecent.map((project, index) => {
+                        return (index < amountOfProjects ?
                             <ProjectCard key={project.id}
                                 title={project.title}
                                 thumbnail={project.thumbnail}
@@ -85,9 +115,15 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                                 mockup={project.mockup}
                                 stack={project.stack}
                                 dateOfCreation={project.dateOfCreation}
-                                preferredLanguage={preferredLanguage} />
+                                preferredLanguage={preferredLanguage} /> : null
                         )
                     })
+                }
+                {
+                    projectsSortedFromMostRecent.length > amountOfProjects ?
+                        <button className={classes.load_more_button} onClick={handleOnClickLoadMore}>
+                            {preferredLanguage === 'en-US' ? 'Load more' : 'Charger plus'}
+                        </button> : null
                 }
             </div>
         </section>

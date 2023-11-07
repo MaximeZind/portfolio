@@ -37,6 +37,8 @@
     font-size: 1.5rem;
 }
 .landing_banner_hero_content_text > h1 {
+    color: var(--senary-color);
+    font-family: "Quicksand";
     font-size: 1.9rem;
 }
 .landing_banner_hero_content_text > h1 > span {

@@ -15,7 +15,7 @@ function ContactMe({ preferredLanguage, scrollableContainer, setIsModalOpen }) {
         function handleScroll() {
             if (contactMeRef.current) {
                 const rect = contactMeRef.current.getBoundingClientRect();
-                if (rect.top <= window.innerHeight) {
+                if (rect.top <= window.innerHeight  && window.innerWidth > 426) {
                     const titleRect = titleRef.current.getBoundingClientRect();
                     setTitleLeft((window.innerWidth - titleRect.width) / 2);
                     const offset = (window.innerHeight - titleRect.top);

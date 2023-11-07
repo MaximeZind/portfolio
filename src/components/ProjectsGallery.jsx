@@ -40,8 +40,8 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                 } else if (rect.top > 0 || rect.bottom <= window.innerHeight) {
                     setIsProjectInfosOpen(false);
                 }
-                // Slides the title to the left, but no further than 10px away from the edge
-                if (rect.top <= window.innerHeight) {
+                // Slides the title to the left
+                if (rect.top <= window.innerHeight && window.innerWidth > 426) {
                     const titleRect = titleRef.current.getBoundingClientRect();
                     setTitleLeft((window.innerWidth - titleRect.width) / 2);
                     const offset = (window.innerHeight - titleRect.top);

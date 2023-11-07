@@ -3,6 +3,10 @@
         "id": 1,
         "title": "Booki",
         "thumbnail": "/assets/projects_thumbnails/booki_thumbnail.png",
+        "description": {
+            "fr-FR": "Mon rôle dans ce projet est d'intégrer l'interface du site web en utilisant du code HTML et CSS. Pour ce faire, je vais :\n\n1. Intégrer les maquettes du site pour les versions desktop, tablette et mobile.\n2. Utiliser les images fournies pour le site.\n3. Respecter les spécifications et contraintes techniques décrites dans la note de synthèse.",
+            "en-US": "My role in this project is to integrate the website's interface using HTML and CSS. To achieve this, I will:\n\n1. Integrate the site's mockups for desktop, tablet, and mobile versions.\n2. Use the provided images for the site.\n3. Adhere to the technical specifications and constraints outlined in the summary note."
+        },
         "tasks": {
             "fr-FR": [
                 "Intégrer une page web à partir d'une maquette",
@@ -10,15 +14,11 @@
                 "Layout en responsive design"
             ],
             "en-US": [
-                "Integrate a web page from a mockup",
-                "Use of grid and flexbox",
+                "Integrating a web page from a mockup",
+                "Utilizing grid and flexbox",
                 "Responsive design layout"
             ]
-        },
-        "description": {
-            "fr-FR": "Mon rôle dans ce projet est d'intégrer l'interface du site web en utilisant du code HTML et CSS. Pour ce faire, je vais :\n\n1. Intégrer les maquettes du site pour les versions desktop, tablette et mobile.\n2. Utiliser les images fournies pour le site.\n3. Respecter les spécifications et contraintes techniques décrites dans la note de synthèse.",
-            "en-US": "My role in this project is to integrate the website's interface using HTML and CSS. To achieve this, I will:\n\n1. Integrate the site's mockups for desktop, tablet, and mobile versions.\n2. Use the provided images for the site.\n3. Adhere to the technical specifications and constraints outlined in the summary note."
-        },
+        },        
         "repo": "https://github.com/MaximeZind/P2-Booki",
         "preview": "URL_de_la_prévisualisation",
         "mockup": "URL_de_la_maquette",
@@ -33,6 +33,10 @@
         "id": 2,
         "title": "Oh My Food",
         "thumbnail": "/assets/projects_thumbnails/ohmyfood_thumbnail.png",
+        "description": {
+            "fr-FR": "Ma mission consiste à développer un site web \"mobile first\" pour Ohmyfood. Ce site répertoriera les menus de restaurants gastronomiques à Paris, offrant aux clients la possibilité de composer leur menu et de réduire les temps d'attente. Les maquettes mobile et desktop ont été fournies, incluant des animations, ainsi que les ressources du site (images et textes). Le site doit être responsive, privilégier le mobile, et inclure des animations soignées. Mon travail est de suivre les directives du brief créatif, en expliquant le fonctionnement des animations à l'équipe. L'objectif est de livrer un site pleinement fonctionnel conformément aux spécifications.",
+            "en-US": "My mission is to develop a 'mobile first' website for Ohmyfood. This site will list menus from gourmet restaurants in Paris, offering customers the option to create their menu and reduce waiting times. Mobile and desktop mockups, including animations, and site resources (images and text) have been provided. The site should be responsive, prioritize mobile, and include polished animations. My task is to follow the guidelines in the creative brief and explain how the animations work to the team. The goal is to deliver a fully functional site in accordance with the specifications."
+        },
         "tasks": {
             "fr-FR": [
                 "Intégrer une page web à partir d'une maquette",
@@ -42,16 +46,12 @@
                 "Mobile first"
             ],
             "en-US": [
-                "Integrate a web page from a mockup",
+                "Integrating a web page from a mockup",
                 "Responsive design layout",
                 "CSS animations",
                 "Loading animation",
-                "Mobile-first"
+                "Mobile-first approach"
             ]
-        },
-        "description": {
-            "fr-FR": "Ma mission consiste à développer un site web \"mobile first\" pour Ohmyfood. Ce site répertoriera les menus de restaurants gastronomiques à Paris, offrant aux clients la possibilité de composer leur menu et de réduire les temps d'attente. Les maquettes mobile et desktop ont été fournies, incluant des animations, ainsi que les ressources du site (images et textes). Le site doit être responsive, privilégier le mobile, et inclure des animations soignées. Mon travail est de suivre les directives du brief créatif, en expliquant le fonctionnement des animations à l'équipe. L'objectif est de livrer un site pleinement fonctionnel conformément aux spécifications.",
-            "en-US": "My mission is to develop a 'mobile first' website for Ohmyfood. This site will list menus from gourmet restaurants in Paris, offering customers the option to create their menu and reduce waiting times. Mobile and desktop mockups, including animations, and site resources (images and text) have been provided. The site should be responsive, prioritize mobile, and include polished animations. My task is to follow the guidelines in the creative brief and explain how the animations work to the team. The goal is to deliver a fully functional site in accordance with the specifications."
         },
         "repo": "https://github.com/MaximeZind/P3-OhMyFood",
         "preview": "https://maximezind.github.io/P3-OhMyFood/",
@@ -78,9 +78,9 @@
                 "Validation d'un formulaire en JavaScript"
             ],
             "en-US": [
-                "Creation of a landing page",
+                "Creating a landing page",
                 "Responsive design layout",
-                "Validation of a form in JavaScript"
+                "JavaScript form validation"
             ]
         },
         "repo": "https://github.com/MaximeZind/P4-GameOn",
@@ -111,11 +111,11 @@
                 "Design factory en JavaScript"
             ],
             "en-US": [
-                "Integrate a web page from a mockup",
+                "Integrating a web page from a mockup",
                 "Responsive design layout",
-                "Fetching data using asynchronous functions",
-                "Special attention to accessibility",
-                "Design factory in JavaScript"
+                "Fetching data through asynchronous functions",
+                "Special focus on accessibility",
+                "JavaScript design factory"
             ]
         },
         "repo": "https://github.com/MaximeZind/P6-Front-End-Fisheye",
@@ -140,17 +140,17 @@
         "tasks": {
             "fr-FR": [
                 "Intégrer une page web à partir d'une maquette",
-                "Layout en responsive design",
-                "Fetch des données via des fonctions asynchrones",
-                "Design factory en JavaScript",
-                "Mise en place d'un algorithme de recherche"
+                "Mise en page en responsive design",
+                "Récupération de données via des fonctions asynchrones",
+                "Création d'une factory de design en JavaScript",
+                "Implémentation d'un algorithme de recherche"
             ],
             "en-US": [
-                "Integrate a web page from a mockup",
+                "Integrating a web page from a mockup",
                 "Responsive design layout",
-                "Fetching data using asynchronous functions",
-                "Design factory in JavaScript",
-                "Implementation of a search algorithm"
+                "Fetching data through asynchronous functions",
+                "Creating a JavaScript design factory",
+                "Implementing a search algorithm"
             ]
         },
         "repo": "https://github.com/MaximeZind/P7-front-end-search-engine",
@@ -174,12 +174,12 @@
         },
         "tasks": {
             "fr-FR": [
-                "Débuggage d'une application mal codée",
-                "Mise en place de tests unitaires avec Jest",
-                "Mise en place d'un plan pour les tests End2End"
+                "Correction de bugs dans une application mal codée",
+                "Implémentation de tests unitaires avec Jest",
+                "Élaboration d'un plan pour les tests End2End"
             ],
             "en-US": [
-                "Debugging poorly written code",
+                "Fixing bugs in a poorly coded application",
                 "Setting up unit tests with Jest",
                 "Creating a plan for End2End tests"
             ]
@@ -206,16 +206,16 @@
         },
         "tasks": {
             "fr-FR": [
-                "Conception de diagrammes de cas d'usage",
-                "Rédaction des user stories avec critères d'acceptation",
-                "Création de maquettes de site avec un design simple",
-                "Mise en place d'un Kanban pour découper le projet"
+                "Diagrammes de cas d'usage",
+                "User Stories pour chaque fonctionnalité",
+                "Maquette du site avec Figma",
+                "Mise en place du Kanban en découpant le projet"
             ],
             "en-US": [
-                "Designing use case diagrams",
-                "Writing user stories with acceptance criteria",
-                "Creating website mock-ups with a simple design",
-                "Setting up a Kanban board to break down the project"
+                "Use case diagrams",
+                "User Stories for each feature",
+                "Site wireframe with Figma",
+                "Setting up Kanban by breaking down the project"
             ]
         },
         "repo": null,
@@ -237,16 +237,16 @@
         },
         "tasks": {
             "fr-FR": [
-                "Développement d'une application React",
-                "Création de composants React réutilisables",
-                "Mise en place du routage avec React Router Dom",
-                "Création d'un carrousel"
+                "Création d'une application React",
+                "Logique de composants réutilisables",
+                "Routage avec React Router Dom",
+                "Création d'un carousel"
             ],
             "en-US": [
-                "Developing a React application",
-                "Creating reusable React components",
-                "Setting up routing with React Router Dom",
-                "Building a carousel"
+                "Creating a React application",
+                "Logic for reusable components",
+                "Routing with React Router Dom",
+                "Creating a carousel"
             ]
         },
         "repo": "https://github.com/MaximeZind/P11-Kasa-Platform",
@@ -271,22 +271,16 @@
         },
         "tasks": {
             "fr-FR": [
-                "Développement de la page de profil utilisateur en React",
-                "Intégration des graphiques liés à l'activité sportive, avec D3 ou Recharts, en privilégiant D3",
-                "Intégration CSS pour la version desktop de la page",
-                "Garantir la lisibilité de la page sur des écrans d'au moins 1024 par 780 pixels",
-                "Gestion des appels HTTP depuis un backend NodeJS, en utilisant Fetch ou Axios en dehors des composants React",
-                "Création d'un mock des données de l'API pour normaliser le schéma de données avant l'intégration",
-                "Documentation du projet avec un Readme, JSDoc ou propTypes pour faciliter la collaboration en équipe"
+                "Création d'une table d'analytics avec React",
+                "Récupération des données du backend via axios",
+                "Utilisation de Recharts pour les graphiques",
+                "Modélisation des données via une classe 'utilisateur'"
             ],
             "en-US": [
-                "Develop the user profile page in React",
-                "Integrate charts related to sports activities, choosing between D3 or Recharts, with a focus on D3",
-                "CSS integration for the desktop version of the page",
-                "Ensure page readability on screens with a minimum resolution of 1024 by 780 pixels",
-                "Manage HTTP requests from a backend NodeJS using Fetch or Axios outside of React components",
-                "Create a mock of API data to standardize the data schema before integration",
-                "Document the project with a Readme, JSDoc, or propTypes to facilitate team collaboration"
+                "Creating an analytics table with React",
+                "Retrieving backend data using axios",
+                "Using Recharts for charting",
+                "Data modeling using a 'user' class"
             ]
         },
         "repo": "https://github.com/MaximeZind/P12-SportSee",
@@ -311,20 +305,14 @@
         },
         "tasks": {
             "fr-FR": [
-                "Développement de l'application web réactive",
-                "Gestion de l'état avec Redux",
-                "Fonctionnalités d'authentification",
-                "Intégration des API Backend",
-                "Support pour la phase 2 (transactions)",
-                "Collaboration et revue de code avec l'équipe Argent Bank"
+                "State globaux avec Redux",
+                "Connection au compte via l'API (avec token)",
+                "Documentation de la seconde partie de l'API pour les transactions"
             ],
             "en-US": [
-                "Develop the responsive web application",
-                "State management with Redux",
-                "Authentication features",
-                "Integration of Backend APIs",
-                "Support for Phase 2 (transactions)",
-                "Collaboration and code review with the Argent Bank team"
+                "Global state management with Redux",
+                "Connecting to the account through the API (with a token)",
+                "Documenting the second part of the API for transactions"
             ]
         },
         "repo": "https://github.com/MaximeZind/P13-Bank-API",
@@ -350,20 +338,16 @@
         },
         "tasks": {
             "fr-FR": [
-                "Conversion complète du projet HRNet en React",
-                "Conversion d'un des plugins jQuery en React",
-                "Remplacement des trois autres plugins jQuery par des composants React",
-                "Tests de performance avec Lighthouse",
-                "Tests unitaires et manuels",
-                "Respect du paradigme de programmation fonctionnelle avec React"
+                "Complete overhaul of an old JQuery application",
+                "Creation and publication of 4 plugins on npm",
+                "Performance testing using LightHouse",
+                "End-to-End testing with Cypress"
             ],
             "en-US": [
-                "Complete conversion of the HRNet project to React",
-                "Conversion of one of the jQuery plugins to React",
-                "Replacement of the other three jQuery plugins with React components",
-                "Performance testing with Lighthouse",
-                "Unit and manual testing",
-                "Adherence to the functional programming paradigm with React"
+                "Complete overhaul of an old JQuery application",
+                "Creation and publication of 4 plugins on npm",
+                "Performance testing using LightHouse",
+                "End-to-End testing with Cypress"
             ]
         },
         "repo": "https://github.com/MaximeZind/P14-Wealth_Health",

@@ -3,14 +3,23 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import github_logo from '../assets/stack_icons/github_logo.png';
 import figma_logo from '../assets/stack_icons/figma_logo.svg';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 function ProjectCard({ title, thumbnail, tasks, repo, preview, mockup, stack, dateOfCreation, preferredLanguage }) {
 
     const [isOpen, setIsOpen] = useState(false);
+    const projectCardRef = useRef(null);
+
+    // Make sure the card closes when the user clicks outside of it
+    document.addEventListener('click', handleClickOutside);
+    function handleClickOutside(event) {
+        if (isOpen && projectCardRef.current && !projectCardRef.current.contains(event.target)) {
+            setIsOpen(false);
+        }
+    }
 
     return (
-        <article className={isOpen ? `${classes.project_card} ${classes.open}` : `${classes.project_card}`}>
+        <article ref={projectCardRef} className={isOpen ? `${classes.project_card} ${classes.open}` : `${classes.project_card}`}>
             <img src={thumbnail} alt={title} className={classes.project_card_image} />
             <div className={classes.project_card_content}>
                 <header className={classes.project_card_content_header}>
@@ -25,7 +34,7 @@ function ProjectCard({ title, thumbnail, tasks, repo, preview, mockup, stack, da
                             viewBox="0 0 32 32"
                             xmlSpace="preserve"
                             style={{
-                                transform: isOpen ? 'rotate(180deg)' : null,
+                                transform: isOpen ? 'rotate(0deg)' : null,
                             }}>
                             <path d="M24.285,11.284L16,19.571l-8.285-8.288c-0.395-0.395-1.034-0.395-1.429,0  c-0.394,0.395-0.394,1.035,0,1.43l8.999,9.002l0,0l0,0c0.394,0.395,1.034,0.395,1.428,0l8.999-9.002  c0.394-0.395,0.394-1.036,0-1.431C25.319,10.889,24.679,10.889,24.285,11.284z"
                                 id="Expand_More" />

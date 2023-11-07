@@ -17,7 +17,7 @@
     object-fit: cover;
 }
 
-.project_card_content{
+.project_card_content {
     background-color: rgb(0,0,0,0.4);
     grid-column-start: 1;
     grid-column-end: 1;
@@ -61,6 +61,7 @@
     height: 25px;
     width: 25px;
     fill: #cfe6e3;
+    transform: rotate(180deg);
     transition: transform .3s ease-in-out;
 }
 

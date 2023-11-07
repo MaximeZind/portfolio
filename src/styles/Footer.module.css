@@ -10,6 +10,8 @@
     padding: 70px;
 }
 
+/* Logo (left) */
+
 .footer_logo_wrapper {
     width: 30%;
     height: 100%;
@@ -23,11 +25,14 @@
     width: 100px;
 }
 
+/* Right side */
+
 .footer_right {
     width: 70%;
     height: 100%;
 }
 
+/* Footer Nav */
 .footer_right_nav {
     height: 50%;
     border-bottom: 1px solid var(--senary-color);
@@ -37,6 +42,7 @@
     align-items: center;
 }
 
+/* Footer Socials */
 .footer_right_socials {
     height: 50%;
     padding-right: 50px;
@@ -63,6 +69,8 @@
 .footer_signature {
     color: var(--quarternary-color);
 }
+
+/* Media Queries */
 
 @media (max-width: 500px) {
 

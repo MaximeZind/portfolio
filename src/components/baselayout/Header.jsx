@@ -67,8 +67,8 @@ function Header({ scrollValue }) {
                             </Link>
                         )
                     })}
-                    <LanguagePicker />
                     <ThemeToggle />
+                    <LanguagePicker />
                 </nav>
                 <div className={isOpen ? `${classes.burger_menu} ${classes.open}` : `${classes.burger_menu}`}
                     onClick={() => setIsOpen(!isOpen)}>

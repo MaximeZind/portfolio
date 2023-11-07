@@ -85,3 +85,9 @@
         opacity: 0;
     }
 }
+
+@media (max-width: 768px) {
+    .language_picker_container {
+        transform: scale(1.5);
+    }
+}

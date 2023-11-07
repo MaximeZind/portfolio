@@ -26,7 +26,7 @@
             "HTML",
             "CSS"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2022-12-02"
     },
     {
@@ -60,7 +60,7 @@
             "HTML",
             "CSS"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2022-12-22"
     },
     {
@@ -91,7 +91,7 @@
             "CSS",
             "JS"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-01-12"
     },
     {
@@ -126,7 +126,7 @@
             "CSS",
             "JS"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-02-03"
     },
     {
@@ -161,7 +161,7 @@
             "CSS",
             "JS"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-02-24"
     },
     {
@@ -193,7 +193,7 @@
             "JS",
             "Jest"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-04-21"
     },
     {
@@ -224,7 +224,7 @@
         "stack": [
             "Figma"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-05-12"
     },
     {
@@ -258,7 +258,7 @@
             "JS",
             "React"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-06-30"
     },
     {
@@ -292,7 +292,7 @@
             "JS",
             "React"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-08-04"
     },
     {
@@ -325,7 +325,7 @@
             "React",
             "Redux"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-08-25"
     },
     {
@@ -361,7 +361,7 @@
             "Redux",
             "Cypress"
         ],
-        "type": "openclassrooms",
+        "type": "Openclassrooms",
         "dateOfCreation": "2023-10-27"
     },
     {
@@ -369,8 +369,8 @@
         "title": "Portfolio",
         "thumbnail": "/assets/projects_thumbnails/portfolio_thumbnail.png",
         "description": {
-            "fr-FR": "Ma formation d'un an avec OpenClassrooms touchant à son terme, j'ai réfléchi à quel projet créer. Quoi de mieux qu'un portfolio, regroupant tous les projets sur lesquels j'ai travailler, pour illustrer une année d'efforts qui porte ses fruits? J'ai créé le design et ajouté des fonctionnalités au fur et à mesure. Je me suis plus ou moins servi de ce projet comme d'un terrain de jeu (notamment pour la partie avec l'effet de parallax). J'ai pris beaucoup de plaisir à le créer, j'espère que vous en aurez à l'explorer.",
-            "en-US": "As my year long course with OpenClassrooms is coming to an end, I've been thinking about what project to create. What could be better than a portfolio, gathering all the projects I've worked on, to illustrate a year of efforts bearing fruit? I designed it and added features gradually. I used this project more or less as a playground (especially for the part with the parallax effect). I greatly enjoyed creating it, and I hope you will enjoy exploring it."
+            "fr-FR": "Ma formation d'un an avec Openclassrooms touchant à son terme, j'ai réfléchi à quel projet créer. Quoi de mieux qu'un portfolio, regroupant tous les projets sur lesquels j'ai travailler, pour illustrer une année d'efforts qui porte ses fruits? J'ai créé le design et ajouté des fonctionnalités au fur et à mesure. Je me suis plus ou moins servi de ce projet comme d'un terrain de jeu (notamment pour la partie avec l'effet de parallax). J'ai pris beaucoup de plaisir à le créer, j'espère que vous en aurez à l'explorer.",
+            "en-US": "As my year long course with Openclassrooms is coming to an end, I've been thinking about what project to create. What could be better than a portfolio, gathering all the projects I've worked on, to illustrate a year of efforts bearing fruit? I designed it and added features gradually. I used this project more or less as a playground (especially for the part with the parallax effect). I greatly enjoyed creating it, and I hope you will enjoy exploring it."
         },
         "tasks": {
             "fr-FR": [
@@ -398,7 +398,7 @@
             "React",
             "Redux"
         ],
-        "type": "personnalProject",
+        "type": "Personnal Projects",
         "dateOfCreation": "2023-11-07"
     }
 ]

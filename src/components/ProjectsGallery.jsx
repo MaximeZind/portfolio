@@ -1,7 +1,7 @@
 import classes from '../styles/ProjectsGallery.module.css';
 import PropTypes from 'prop-types';
 import hook from '../assets/hook.svg';
-import { getProjects } from '../utils/getProjectsData';
+import { getProjectTypes, getProjects } from '../utils/getProjectsData';
 import ProjectPreview from './ProjectPreview';
 import { useEffect, useRef, useState } from 'react';
 import ProjectCard from './ProjectCard';
@@ -11,7 +11,10 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
 
     // Import of the projects array
     const projects = getProjects();
+    // We sort the projects by most recent
+    const projectsSortedFromMostRecent = sortFromMostRecentToOldest(projects);
 
+    const [projectsArray, setProjectArray] = useState(projectsSortedFromMostRecent);
     // Ref of the gallery (to monitor scrolling)
     const galleryRef = useRef(null);
     // Ref of the title (to slide it according to scrolling)
@@ -25,8 +28,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
     const increment = 4;
     const [amountOfProjects, setAmountOfProjects] = useState(increment);
 
-    // We sort the projects by most recent
-    const projectsSortedFromMostRecent = sortFromMostRecentToOldest(projects);
+
 
     // useEffect used to 
     // - update the data in ProjectInfos
@@ -64,6 +66,19 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
         }
     }
 
+    // Everything that has to do with picking the project type
+    const projectsTypes = getProjectTypes(projectsSortedFromMostRecent);
+    const [projectType, setProjectType] = useState('All');
+
+    // Updates the array with projects corresponding to the project type selected
+    useEffect(() => {
+        if (projectType === 'All') {
+            setProjectArray(projectsSortedFromMostRecent);
+        } else if (projectType !== 'All') {
+            setProjectArray(projectsSortedFromMostRecent.filter((object) => object.type === projectType));
+        }
+    }, [projectType])
+
     return (
         <section ref={galleryRef} className={classes.projects_gallery} id='projects'>
             <img className={classes.hook} src={hook} alt="hook" />
@@ -76,9 +91,19 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
             <div className={classes.projects_gallery_divider}>
                 <div className={classes.project_infos_background}></div>
                 <div className={classes.projects_gallery_previews}>
+                    <div className={classes.type_picker}>
+                        {
+                            projectsTypes.map((type, index) => {
+                                return (
+                                    <span className={type === projectType ? `${classes.type_picker_type} ${classes.selected}` : `${classes.type_picker_type}`}
+                                        key={index}
+                                        onClick={() => setProjectType(type)}>{type}</span>
+                                )
+                            })
+                        }
+                    </div>
                     {
-                        projectsSortedFromMostRecent.map((project, index) => {
-
+                        projectsArray.map((project, index) => {
                             return (index < amountOfProjects ?
                                 <ProjectPreview key={project.id}
                                     id={project.id}
@@ -95,7 +120,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                         })
                     }
                     {
-                        projectsSortedFromMostRecent.length > amountOfProjects ?
+                        projectsArray.length > amountOfProjects ?
                             <button className={classes.load_more_button} onClick={handleOnClickLoadMore}>
                                 {preferredLanguage === 'en-US' ? 'Load more' : 'Charger plus'}
                             </button> : null
@@ -103,8 +128,19 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                 </div>
             </div>
             <div className={classes.projects_gallery_classic}>
+                <div className={classes.type_picker}>
+                    {
+                        projectsTypes.map((type, index) => {
+                            return (
+                                <span className={type === projectType ? `${classes.type_picker_type} ${classes.selected}` : `${classes.type_picker_type}`}
+                                    key={index}
+                                    onClick={() => setProjectType(type)}>{type}</span>
+                            )
+                        })
+                    }
+                </div>
                 {
-                    projectsSortedFromMostRecent.map((project, index) => {
+                    projectsArray.map((project, index) => {
                         return (index < amountOfProjects ?
                             <ProjectCard key={project.id}
                                 title={project.title}
@@ -120,7 +156,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                     })
                 }
                 {
-                    projectsSortedFromMostRecent.length > amountOfProjects ?
+                    projectsArray.length > amountOfProjects ?
                         <button className={classes.load_more_button} onClick={handleOnClickLoadMore}>
                             {preferredLanguage === 'en-US' ? 'Load more' : 'Charger plus'}
                         </button> : null

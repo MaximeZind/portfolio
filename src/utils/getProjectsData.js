@@ -12,3 +12,11 @@ export function getProject(id) {
 export function getLastProjectId(){
     return projects[projects.length-1];
 }
+
+export function getProjectTypes(array) {
+    let projectTypes = ['All']
+    array.map((item) => {
+        !projectTypes.includes(item.type) && projectTypes.push(item.type);
+    });
+    return projectTypes;
+}

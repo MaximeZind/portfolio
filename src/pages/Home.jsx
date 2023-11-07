@@ -34,6 +34,10 @@ function Home({ }) {
             'en-US': '',
             'fr-FR': '',
         },
+        tasks: {
+            'en-US': [],
+            'fr-FR': [],
+        },
         repo: '',
         preview: '',
         mockup: '',
@@ -56,7 +60,7 @@ function Home({ }) {
     // Everything that's got to do with the Modal (after a message is sent)
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+ console.log(currentProject)
     return (
         <>
             <main ref={mainRef} className={classes.main}>
@@ -75,7 +79,7 @@ function Home({ }) {
             {isProjectInfosOpen ?
                 <ProjectInfos id={currentProject.id}
                     title={currentProject.title}
-                    description={currentProject.description[preferredLanguage]}
+                    tasks={currentProject.tasks[preferredLanguage]}
                     repo={currentProject.repo}
                     preview={currentProject.preview}
                     mockup={currentProject.mockup}

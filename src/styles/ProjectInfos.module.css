@@ -9,7 +9,17 @@
     justify-content: center;
     align-items: center;
     pointer-events: none;
+    gap: 20px;
     color: var(--quarternary-color);
+    padding-left: 20px;
+}
+
+.project_infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 .project_infos_icon {
@@ -23,10 +33,12 @@
     height: 40px;
 }
 
-.project_infos_description {
-    max-height: 50vh;
-    text-overflow: ellipsis;
-    overflow: hidden;
+.project_infos_tasks {
+    text-align: left;
+}
+
+.project_infos_tasks > li {
+    list-style-type: circle;
 }
 
 /* animations */

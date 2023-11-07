@@ -43,7 +43,7 @@ function Header({ }) {
                 </div>
             </div>
             <p className={classes.footer_signature}>
-                © Made with ❤️ by Maxime Zinderstein
+                {preferredLanguage == 'en-US' ? '2023 - © Made with ❤️ by Maxime Zinderstein' : '2023 - © Créé avec ❤️ par Maxime Zinderstein'}
             </p>
         </footer>
     )

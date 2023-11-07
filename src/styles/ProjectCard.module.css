@@ -119,10 +119,17 @@
     border-radius: 50%;
 }
 
-.project_card_content_text_description {
+.project_infos_tasks {
+    padding-left: 10px;
+    text-align: left;
     height: 100%;
     overflow: hidden;
     color: var(--quarternary-color);
+    font-size: 0.8rem;
+}
+
+.project_infos_tasks > li {
+    list-style-type: none;
 }
 
 .project_card_content_footer {

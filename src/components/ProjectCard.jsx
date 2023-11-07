@@ -5,7 +5,7 @@ import github_logo from '../assets/stack_icons/github_logo.png';
 import figma_logo from '../assets/stack_icons/figma_logo.svg';
 import { useState } from 'react';
 
-function ProjectCard({ title, thumbnail, description, repo, preview, mockup, stack, dateOfCreation, preferredLanguage }) {
+function ProjectCard({ title, thumbnail, tasks, repo, preview, mockup, stack, dateOfCreation, preferredLanguage }) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -72,9 +72,13 @@ function ProjectCard({ title, thumbnail, description, repo, preview, mockup, sta
                             }
                         </div>
                     </div>
-                    <p className={classes.project_card_content_text_description}>
-                        {description}
-                    </p>
+                    <ul className={classes.project_infos_tasks}>
+                        {tasks.map((task, index) => {
+                            return (
+                                <li key={index} className={classes.project_infos_tasks_task}>{task}</li>
+                            )
+                        })}
+                    </ul>
                     <footer className={classes.project_card_content_footer}>
                         {stack.map((tech) => {
                             const lowerCaseTech = tech.toLowerCase();
@@ -100,7 +104,9 @@ export default ProjectCard;
 ProjectCard.propTypes = {
     title: PropTypes.string.isRequired,
     thumbnail: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    tasks: PropTypes.arrayOf(
+        PropTypes.string
+    ).isRequired,
     repo: PropTypes.string,
     preview: PropTypes.string,
     mockup: PropTypes.string,

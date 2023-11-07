@@ -69,12 +69,13 @@
 @media (max-width: 768px) {
 
     .fisherman_parallax_section {
-        position: relative;
-        transform-style: preserve-3d;
         height: 1200px;
-        z-index: -1;
-        margin-top: 500px;
-        --margin_top: 0px;
     }
-    
+}
+
+@media (max-width: 425px) {
+
+    .fisherman_parallax_section {
+        height: 600px;
+    }
 }

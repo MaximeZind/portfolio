@@ -20,7 +20,6 @@
     color: var(--quinary-color);
     position: absolute;
     top: 100px;
-    right: 0px;
     z-index: 1000;
     transition: transform .8s ease-out;
     opacity: .9;

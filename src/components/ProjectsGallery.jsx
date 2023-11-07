@@ -13,6 +13,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
     const galleryRef = useRef(null);
     const titleRef = useRef(null);
     const [titleScrollLeft, setTitleScrollLeft] = useState(0);
+    const [titleLeft, setTitleLeft] = useState(0);
 
     //
     useEffect(() => {
@@ -26,20 +27,10 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                 }
                 // Slides the title to the left, but no further than 10px away from the edge
                 if (rect.top <= window.innerHeight) {
-                    // const margins = window.innerWidth/8;
-                    const margins = 10;
-                    console.log(margins);
                     const titleRect = titleRef.current.getBoundingClientRect();
-                    const startWidth = titleRect.width;
+                    setTitleLeft((window.innerWidth - titleRect.width) / 2);
                     const offset = (window.innerHeight - titleRect.top);
-                    const vector = window.innerWidth - (startWidth + 2*margins);
-                    const ratio = vector / window.innerHeight;
-                    const translateX = -(ratio * offset)
-                    if (window.innerWidth > (startWidth + 2*margins + translateX)) {
-                        setTitleScrollLeft(translateX);
-                    } else if (window.innerWidth <= (startWidth + 2*margins + translateX)) {
-                        setTitleScrollLeft(-vector);
-                    }
+                    setTitleScrollLeft(-offset/12)
                 }
             }
         }
@@ -56,7 +47,8 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
             <h2 className={classes.projects_gallery_title}
                 ref={titleRef}
                 style={{
-                    transform: `translateX(${titleScrollLeft}px)`
+                    transform: `translateX(${titleScrollLeft}px)`,
+                    left: `${titleLeft}px`
                 }}>{preferredLanguage === 'en-US' ? 'Projects Gallery' : 'Galerie des projets'}</h2>
             <div className={classes.projects_gallery_divider}>
                 <div className={classes.project_infos_background}></div>
@@ -87,7 +79,7 @@ function ProjectsGallery({ preferredLanguage, scrollableContainer, setIsProjectI
                             <ProjectCard key={project.id}
                                 title={project.title}
                                 thumbnail={project.thumbnail}
-                                description={project.description[preferredLanguage]}
+                                tasks={project.tasks[preferredLanguage]}
                                 repo={project.repo}
                                 preview={project.preview}
                                 mockup={project.mockup}

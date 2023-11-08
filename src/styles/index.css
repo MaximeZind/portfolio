@@ -11,6 +11,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  /* Color palettes */
+/* 
+  What these are used for:
+  --primary-color: Primary background color
+  --secondary-color: Secondary background color
+  --ternary-color: Accent color
+  --quarternary-color: Texts color
+  --quinary-color: Titles color
+  --senary-color: Links color */
+
   --light-primary: #94c4bc; 
   --light-secondary: #cfe6e3;
   --light-ternary: #723642;

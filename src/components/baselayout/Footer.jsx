@@ -25,9 +25,7 @@ function Footer({ }) {
                             return (
                                 <Link key={link.url}
                                     className={classes.link}
-                                    to={link.url}
-                                    onClick={() => setIsOpen(false)}
-                                >
+                                    to={link.url}>
                                     {link.text[preferredLanguage]}
                                 </Link>
                             )

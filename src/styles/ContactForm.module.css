@@ -77,8 +77,12 @@
 @media (max-width: 768px) {
 
     .contact_form_fields {
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 50%;
+        display: flex;
+        flex-direction: column;
         gap: 100px;
+    }
+
+    .contact_form_message {
+        min-height: 200px;
     }
 }
